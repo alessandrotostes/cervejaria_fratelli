@@ -1,0 +1,85 @@
+/* Imagens otimizadas para placeholder */
+.hero-section {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("https://images.unsplash.com/photo-1600788886242-5c96aabe3757?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80");
+}
+
+.gallery-hero-section {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("https://images.unsplash.com/photo-1571989569743-3ecb994b4d3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80");
+}
+
+/* Otimização para carregamento */
+.img-placeholder {
+  background-color: var(--secondary-color);
+  background-image: linear-gradient(
+    135deg,
+    var(--secondary-color) 0%,
+    var(--accent-color) 100%
+  );
+}
+
+/* Otimização para dispositivos móveis */
+@media (max-width: 575.98px) {
+  .hero-section,
+  .gallery-hero-section {
+    background-attachment: scroll;
+  }
+
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Melhorias de acessibilidade */
+.btn,
+a {
+  transition: all 0.3s ease;
+}
+
+.btn:focus,
+a:focus {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* Otimização de performance */
+.lazy-load {
+  transition: opacity 0.5s;
+  opacity: 0;
+}
+
+.lazy-load.loaded {
+  opacity: 1;
+}
+
+/* Melhorias para impressão */
+@media print {
+  .navbar,
+  .hero-section,
+  .gallery-hero-section,
+  footer,
+  .btn-filter,
+  .gallery-overlay {
+    display: none !important;
+  }
+
+  body {
+    color: #000;
+    background: #fff;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .section-title h2 {
+    color: #000;
+  }
+}
