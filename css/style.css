@@ -30,7 +30,7 @@ h6 {
 }
 
 p {
-  font-size: 16px;
+  font-size: 21px;
   line-height: 1.8;
 }
 
@@ -864,7 +864,6 @@ a:hover {
   }
 }
 
-
 /* Additional Responsive Adjustments */
 @media (max-width: 992px) {
   .navbar {
@@ -891,4 +890,3 @@ a:hover {
     padding: 40px 0; /* Further reduce padding */
   }
 }
-
