@@ -84,6 +84,7 @@
 .gallery-item {
   margin-bottom: 30px;
   transition: all 0.3s ease;
+  opacity: 0; /* Start hidden */
 }
 
 .gallery-img-container {
@@ -189,7 +190,7 @@
   }
 
   .gallery-img-container {
-    height: 200px;
+    height: 280px; /* Increased height for better visibility */
   }
 }
 
@@ -203,6 +204,6 @@
   }
 
   .gallery-img-container {
-    height: 180px;
+    height: 260px; /* Increased height for better visibility on smaller screens */
   }
 }

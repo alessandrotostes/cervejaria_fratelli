@@ -122,6 +122,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (isElementInViewport(item) && !item.classList.contains("animated")) {
         // Adicionar atraso baseado no índice para efeito cascata
         setTimeout(() => {
+          item.style.opacity = 1; // Explicitly set opacity to 1
           item.classList.add("animated", "fadeInUp");
         }, (index % 3) * 100); // Atraso diferente para cada coluna
       }
