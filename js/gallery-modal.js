@@ -1,145 +1,161 @@
-// Script para o carrossel modal personalizado da galeria
+// Script modernizado para a galeria interativa
 document.addEventListener("DOMContentLoaded", function () {
-  // Criar o modal para o carrossel
-  const modalHTML = `
-        <div id="galleryModal" class="gallery-modal">
-            <div class="gallery-modal-content">
-                <span class="gallery-modal-close">&times;</span>
-                <div class="gallery-modal-container">
-                    <img id="galleryModalImg" class="gallery-modal-img">
-                    <div class="gallery-modal-caption"></div>
-                </div>
-                <a class="gallery-modal-prev">&#10094;</a>
-                <a class="gallery-modal-next">&#10095;</a>
-            </div>
-        </div>
-    `;
+  // Filtros da galeria com navegação suave
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const galleryItems = document.querySelectorAll(".gallery-item");
+  const galleryCategories = document.querySelectorAll(".gallery-category");
 
-  // Adicionar o modal ao body
-  document.body.insertAdjacentHTML("beforeend", modalHTML);
+  // Inicializar Lightbox para galeria
+  if (typeof lightbox !== "undefined") {
+    lightbox.option({
+      resizeDuration: 300,
+      wrapAround: true,
+      albumLabel: "Imagem %1 de %2",
+      fadeDuration: 300,
+      showImageNumberLabel: true,
+      alwaysShowNavOnTouchDevices: true,
+    });
+  }
 
-  // Selecionar elementos do DOM
-  const modal = document.getElementById("galleryModal");
-  const modalImg = document.getElementById("galleryModalImg");
-  const modalCaption = document.querySelector(".gallery-modal-caption");
-  const closeBtn = document.querySelector(".gallery-modal-close");
-  const prevBtn = document.querySelector(".gallery-modal-prev");
-  const nextBtn = document.querySelector(".gallery-modal-next");
+  // Função para navegação suave
+  function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      const navbarHeight = document.querySelector(".navbar").offsetHeight;
+      const sectionTop =
+        section.getBoundingClientRect().top +
+        window.pageYOffset -
+        navbarHeight -
+        20;
 
-  // Variáveis para controlar o carrossel
-  let currentCategory = "";
-  let currentImages = [];
-  let currentIndex = 0;
+      window.scrollTo({
+        top: sectionTop,
+        behavior: "smooth",
+      });
+    }
+  }
 
-  // Função para abrir o modal
-  function openModal(img, category) {
-    // Definir a categoria atual
-    currentCategory = category;
+  // Adicionar eventos aos botões de filtro
+  if (filterButtons.length > 0) {
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", function () {
+        // Remover classe active de todos os botões
+        filterButtons.forEach((btn) => btn.classList.remove("active"));
 
-    // Coletar todas as imagens da mesma categoria
-    const categoryItems = document.querySelectorAll(
-      `.gallery-item[data-category="${category}"]`
-    );
-    currentImages = [];
+        // Adicionar classe active ao botão clicado
+        this.classList.add("active");
 
-    categoryItems.forEach((item) => {
-      const imgElement = item.querySelector(".gallery-img");
-      const imgSrc = imgElement.getAttribute("src");
-      const imgAlt = imgElement.getAttribute("alt");
-      const imgTitle =
-        item.querySelector("a").getAttribute("data-title") || imgAlt;
+        const filter = this.getAttribute("data-filter");
 
-      currentImages.push({
-        src: imgSrc,
-        title: imgTitle,
+        // Se for "all", mostrar todas as categorias
+        if (filter === "all") {
+          galleryCategories.forEach((category) => {
+            category.style.display = "block";
+          });
+          // Rolar para o topo da galeria
+          scrollToSection("galeria");
+        } else {
+          // Esconder todas as categorias
+          galleryCategories.forEach((category) => {
+            category.style.display = "none";
+          });
+
+          // Mostrar apenas a categoria selecionada
+          const selectedCategory = document.getElementById(filter);
+          if (selectedCategory) {
+            selectedCategory.style.display = "block";
+            // Rolar para a categoria selecionada
+            scrollToSection(filter);
+          }
+        }
       });
     });
-
-    // Encontrar o índice da imagem atual
-    currentIndex = currentImages.findIndex((image) => image.src === img.src);
-
-    // Exibir a imagem atual
-    modalImg.src = img.src;
-    modalCaption.textContent = currentImages[currentIndex].title;
-
-    // Mostrar o modal com animação
-    modal.style.display = "flex";
-    setTimeout(() => {
-      modal.classList.add("show");
-    }, 10);
-
-    // Impedir o scroll do body
-    document.body.style.overflow = "hidden";
   }
 
-  // Função para fechar o modal
-  function closeModal() {
-    modal.classList.remove("show");
-    setTimeout(() => {
-      modal.style.display = "none";
-      // Permitir o scroll novamente
-      document.body.style.overflow = "auto";
-    }, 300);
-  }
-
-  // Função para navegar para a próxima imagem
-  function nextImage() {
-    currentIndex = (currentIndex + 1) % currentImages.length;
-    modalImg.src = currentImages[currentIndex].src;
-    modalCaption.textContent = currentImages[currentIndex].title;
-    animateImageChange();
-  }
-
-  // Função para navegar para a imagem anterior
-  function prevImage() {
-    currentIndex =
-      (currentIndex - 1 + currentImages.length) % currentImages.length;
-    modalImg.src = currentImages[currentIndex].src;
-    modalCaption.textContent = currentImages[currentIndex].title;
-    animateImageChange();
-  }
-
-  // Função para animar a troca de imagens
-  function animateImageChange() {
-    modalImg.classList.add("changing");
-    setTimeout(() => {
-      modalImg.classList.remove("changing");
-    }, 300);
-  }
-
-  // Adicionar event listeners para todas as imagens da galeria
-  document.querySelectorAll(".gallery-img-container").forEach((container) => {
-    container.addEventListener("click", function (e) {
-      e.preventDefault();
-      const img = this.querySelector(".gallery-img");
-      const category =
-        this.closest(".gallery-item").getAttribute("data-category");
-      openModal(img, category);
+  // Adicionar efeito de hover e clique nas imagens da galeria
+  galleryItems.forEach((item) => {
+    // Adicionar efeito de hover
+    item.addEventListener("mouseenter", function () {
+      this.classList.add("hover");
     });
+
+    item.addEventListener("mouseleave", function () {
+      this.classList.remove("hover");
+    });
+
+    // Adicionar efeito de clique para dispositivos móveis
+    item.addEventListener(
+      "touchstart",
+      function () {
+        this.classList.add("touch-active");
+      },
+      { passive: true }
+    );
+
+    item.addEventListener(
+      "touchend",
+      function () {
+        setTimeout(() => {
+          this.classList.remove("touch-active");
+        }, 300);
+      },
+      { passive: true }
+    );
   });
 
-  // Event listeners para navegação do modal
-  closeBtn.addEventListener("click", closeModal);
-  prevBtn.addEventListener("click", prevImage);
-  nextBtn.addEventListener("click", nextImage);
-
-  // Fechar o modal ao clicar fora da imagem
-  modal.addEventListener("click", function (e) {
-    if (e.target === modal) {
-      closeModal();
-    }
-  });
-
-  // Navegação com teclado
+  // Adicionar navegação com teclado para o lightbox
   document.addEventListener("keydown", function (e) {
-    if (modal.style.display === "flex") {
-      if (e.key === "ArrowLeft") {
-        prevImage();
-      } else if (e.key === "ArrowRight") {
-        nextImage();
+    if (document.querySelector(".lb-container")) {
+      if (e.key === "ArrowRight") {
+        document.querySelector(".lb-next").click();
+      } else if (e.key === "ArrowLeft") {
+        document.querySelector(".lb-prev").click();
       } else if (e.key === "Escape") {
-        closeModal();
+        document.querySelector(".lb-close").click();
       }
     }
+  });
+
+  // Adicionar animação de entrada para os itens da galeria
+  const animateGalleryItems = function () {
+    galleryItems.forEach((item, index) => {
+      if (isElementInViewport(item) && !item.classList.contains("animated")) {
+        // Adicionar atraso baseado no índice para efeito cascata
+        setTimeout(() => {
+          item.classList.add("animated", "fadeInUp");
+        }, (index % 3) * 100); // Atraso diferente para cada coluna
+      }
+    });
+  };
+
+  // Verificar se elemento está visível na viewport
+  function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top <=
+        (window.innerHeight || document.documentElement.clientHeight) * 0.9 &&
+      rect.bottom >= 0
+    );
+  }
+
+  // Executar animação inicial e ao rolar
+  animateGalleryItems();
+  window.addEventListener("scroll", animateGalleryItems);
+
+  // Adicionar funcionalidade de zoom nas imagens
+  const galleryImages = document.querySelectorAll(".gallery-img");
+
+  galleryImages.forEach((img) => {
+    img.addEventListener("click", function (e) {
+      // Impedir que o clique propague para outros elementos
+      e.stopPropagation();
+
+      // Encontrar o link do lightbox associado e clicar nele
+      const lightboxLink =
+        this.closest(".gallery-item").querySelector("a[data-lightbox]");
+      if (lightboxLink) {
+        lightboxLink.click();
+      }
+    });
   });
 });

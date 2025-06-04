@@ -69,3 +69,4 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   }
 });
+// Script para verificar a idade do usuário e exibir o modal de verificação
