@@ -1125,22 +1125,35 @@ a:hover {
 /* Responsividade: Em telas menores, o layout volta a ser vertical */
 @media (max-width: 768px) {
   .chopp-card {
-    flex-direction: column; /* Volta para o layout de coluna no mobile */
+    flex-direction: column;
     padding: 0;
   }
 
+  /* ESTA É A PARTE MAIS IMPORTANTE DA MUDANÇA */
   .chopp-img-wrapper {
+    width: 70%; /* A imagem ocupará 70% da largura da tela, não 100% */
+    margin: 0 auto 20px auto; /* Centraliza o container da imagem e adiciona margem embaixo */
+    height: auto; /* REMOVEMOS a altura fixa! A altura agora será natural */
+    border-radius: var(--border-radius); /* Adicionamos a borda arredondada */
+  }
+
+  /* Garantimos que a imagem preencha o novo container sem distorcer */
+  .chopp-img-wrapper img {
+    object-fit: cover; /* Podemos voltar para 'cover', pois agora o container terá a proporção correta */
     width: 100%;
-    height: 350px;
-    border-radius: 0;
+    height: 100%;
   }
 
   .chopp-body {
     text-align: center;
-    padding: 30px;
+    padding: 0 25px 25px 25px; /* Ajustamos o padding para não ter espaço em cima */
   }
 
-  .chopp-details {
-    justify-content: center; /* Centraliza os detalhes no mobile */
+  .chopp-title {
+    font-size: 24px;
+  }
+
+  .chopp-text {
+    font-size: 16px;
   }
 }
