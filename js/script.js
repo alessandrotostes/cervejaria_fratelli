@@ -43,8 +43,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
   const backToTopBtn = document.getElementById("backToTopBtn");
+
   if (backToTopBtn) {
-    // Adiciona uma verificação para segurança
+    // <-- Adiciona esta verificação
     window.addEventListener("scroll", () => {
       if (window.scrollY > 300) {
         backToTopBtn.classList.add("show");
@@ -53,18 +54,21 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
+
+  // Lógica da Barra de Progresso de Leitura
   const progressBar = document.querySelector(".progress-bar");
 
-  window.addEventListener("scroll", () => {
-    const scrollTop = document.documentElement.scrollTop;
-    const scrollHeight =
-      document.documentElement.scrollHeight -
-      document.documentElement.clientHeight;
-    const scrollPercentage = (scrollTop / scrollHeight) * 100;
-
-    progressBar.style.width = scrollPercentage + "%";
-  });
-
+  if (progressBar) {
+    // <-- Adiciona esta verificação
+    window.addEventListener("scroll", () => {
+      const scrollTop = document.documentElement.scrollTop;
+      const scrollHeight =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+      const scrollPercentage = (scrollTop / scrollHeight) * 100;
+      progressBar.style.width = scrollPercentage + "%";
+    });
+  }
   // Inicializar o destaque do menu
   highlightNavItem();
   window.addEventListener("scroll", highlightNavItem);
