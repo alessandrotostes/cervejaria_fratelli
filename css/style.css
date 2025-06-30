@@ -1127,7 +1127,6 @@ a:hover {
   .chopp-card {
     flex-direction: column;
     padding: 0;
-    background-color: #d1b3895c; /* Mantém o fundo claro */
   }
 
   /* ESTA É A PARTE MAIS IMPORTANTE DA MUDANÇA */
