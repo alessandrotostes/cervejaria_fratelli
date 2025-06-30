@@ -824,7 +824,43 @@ a:hover {
     width: 100%;
   }
 }
+.chopp-card {
+  flex-direction: column;
+  padding: 0;
+}
 
+.chopp-img-wrapper {
+  width: 100%;
+  height: 300px;
+  border-radius: 0;
+}
+
+.chopp-body {
+  text-align: center;
+  padding: 25px;
+}
+
+.chopp-title {
+  font-size: 24px; /* Redução do tamanho do título no mobile */
+}
+
+.chopp-text {
+  font-size: 16px; /* <-- Redução do tamanho do texto de descrição no mobile */
+}
+
+.chopp-details {
+  justify-content: center;
+}
+
+/* --- FIM DOS AJUSTES DO CARROSSEL --- */
+
+.historia-section {
+  min-height: auto;
+  padding: 60px 0;
+}
+.historia-text {
+  font-size: 16px;
+}
 @media (max-width: 576px) {
   .hero-title {
     font-size: 30px;
