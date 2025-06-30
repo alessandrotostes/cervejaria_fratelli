@@ -44,6 +44,10 @@ a:hover {
   color: var(--secondary-color);
 }
 
+.container {
+  max-width: 1200px !important;
+}
+
 .btn {
   padding: 12px 30px;
   border-radius: 50px;
@@ -137,12 +141,6 @@ a:hover {
   color: #d2691e;
 }
 
-.navbar-nav {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
 .nav-item {
   position: relative;
   margin: 0 5px;
@@ -191,8 +189,8 @@ a:hover {
 /* Hero Section */
 .hero-section {
   height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url("../images/cervejariafratelli-bg.png");
+  background: linear-gradient(rgba(0, 0, 0, 0.51), rgba(0, 0, 0, 0.53)),
+    url("../images/imagensbg/fratelli2.JPG") no-repeat center center;
   background-size: cover;
   background-position: center center;
   position: relative;
@@ -461,7 +459,7 @@ a:hover {
 
 /* Chopps Section */
 .chopps-section {
-  padding: 100px 0;
+  padding: 80px 0;
   background-color: #fff;
 }
 
@@ -877,7 +875,7 @@ a:hover {
   .chopeira-section,
   .chopps-section,
   .contato-section {
-    padding: 60px 0; /* Reduce padding */
+    padding: 50pxpx 0; /* Reduce padding */
   }
 }
 
@@ -888,5 +886,224 @@ a:hover {
   .chopps-section,
   .contato-section {
     padding: 40px 0; /* Further reduce padding */
+  }
+}
+
+/* ================================================= */
+/* MODERNIZAÇÕES E CORREÇÕES RESPONSIVAS (INDEX.HTML) */
+/* ================================================= */
+
+/* 1. Correção da Seção "Nossa História" para telas menores (sobrescrito abaixo) */
+@media (max-width: 768px) {
+  .historia-text {
+    font-size: 18px;
+    line-height: 1.7;
+  }
+
+  .historia-img-container {
+    max-height: 350px;
+    margin-top: 30px;
+  }
+}
+
+/* 2. Modernização da Hero Section com animação e gradiente */
+@keyframes fadeInContent {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content > * {
+  animation: fadeInContent 1s ease-out forwards;
+  opacity: 0;
+}
+
+.hero-content .hero-logo {
+  animation-delay: 0.2s;
+}
+.hero-content .hero-title {
+  animation-delay: 0.4s;
+}
+.hero-content .hero-subtitle {
+  animation-delay: 0.6s;
+}
+.hero-content .hero-btn {
+  animation-delay: 0.8s;
+}
+
+.hero-section .overlay {
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+}
+
+/* 3. Micro-interações e Títulos com Gradiente */
+.evento-card:hover {
+  box-shadow: 0 0 25px -5px rgba(139, 69, 19, 0.5);
+  transform: translateY(-10px);
+}
+
+.section-title h2 {
+  background: linear-gradient(
+    90deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* ================================================= */
+/* ESTILO DE TELA CHEIA PARA A SEÇÃO NOSSA HISTÓRIA  */
+/* ================================================= */
+
+.historia-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 30px 0;
+}
+
+.historia-text {
+  font-size: 1.05vw;
+  line-height: 1.65;
+  margin-bottom: 0.5em;
+  font-weight: 500;
+}
+
+.historia-img-container {
+  max-height: 60vh;
+}
+
+@media (max-width: 1200px) {
+  .historia-text {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .historia-section {
+    min-height: auto;
+    padding: 60px 0;
+  }
+  .historia-text {
+    font-size: 16px;
+  }
+}
+.back-to-top-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 20px;
+  line-height: 50px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  opacity: 0; /* Começa escondido */
+  visibility: hidden;
+  transition: all 0.4s ease;
+  transform: translateY(20px);
+}
+
+.back-to-top-btn.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top-btn:hover {
+  background-color: var(--secondary-color);
+  color: white;
+}
+.progress-bar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: transparent;
+  z-index: 9999;
+}
+
+.progress-bar {
+  height: 100%;
+  background: var(--primary-color);
+  width: 0%; /* Começa com 0 */
+  transition: width 0.1s linear;
+}
+/* Transforma o card em um container flexível horizontal */
+.chopp-card {
+  flex-direction: row; /* Alteração principal: de coluna para linha */
+  align-items: center; /* Alinha os itens verticalmente ao centro */
+  gap: 30px;
+  padding: 30px;
+}
+
+/* Define a coluna da imagem */
+.chopp-img-wrapper {
+  flex: 0 0 40%; /* A imagem ocupará 40% da largura e não vai encolher */
+  height: 450px; /* Altura fixa para o container da imagem */
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+/* Remove a altura antiga do seletor de imagem original */
+.chopp-img {
+  height: auto;
+}
+
+.chopp-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Mude para 'cover' para preencher o espaço, cortando o excesso */
+}
+
+/* Define a coluna do texto */
+.chopp-body {
+  flex: 1; /* O texto ocupará o espaço restante */
+  text-align: left; /* Alinha o texto à esquerda */
+  padding: 0; /* Remove o padding antigo */
+}
+
+.chopp-details {
+  justify-content: flex-start; /* Alinha os detalhes à esquerda */
+  gap: 20px;
+}
+
+/* Responsividade: Em telas menores, o layout volta a ser vertical */
+@media (max-width: 768px) {
+  .chopp-card {
+    flex-direction: column; /* Volta para o layout de coluna no mobile */
+    padding: 0;
+  }
+
+  .chopp-img-wrapper {
+    width: 100%;
+    height: 350px;
+    border-radius: 0;
+  }
+
+  .chopp-body {
+    text-align: center;
+    padding: 30px;
+  }
+
+  .chopp-details {
+    justify-content: center; /* Centraliza os detalhes no mobile */
   }
 }

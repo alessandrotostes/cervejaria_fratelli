@@ -172,6 +172,43 @@
 .lb-nav a.lb-next:hover {
   opacity: 1;
 }
+/* Melhorias para o lightbox */
+.lb-data .lb-close {
+  width: 50px; /* Aumenta a área de clique */
+  height: 50px;
+  background: url(https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/images/close.png)
+    top right no-repeat; /* Garante que a imagem carregue */
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.lb-data .lb-close:hover {
+  opacity: 1;
+}
+
+/* Setas de Navegação (Anterior e Próximo) */
+.lb-nav a.lb-prev,
+.lb-nav a.lb-next {
+  width: 60px; /* Aumenta a largura */
+  height: 100%;
+  opacity: 0.5; /* Deixa um pouco transparente */
+  background-color: rgba(0, 0, 0, 0.3); /* Adiciona um fundo para destaque */
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+.lb-nav a.lb-prev:hover,
+.lb-nav a.lb-next:hover {
+  opacity: 1; /* Opacidade total ao passar o mouse */
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Garante que a imagem da seta carregue */
+.lb-nav a.lb-prev {
+  background-image: url(https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/images/prev.png);
+}
+.lb-nav a.lb-next {
+  background-image: url(https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/images/next.png);
+}
 
 /* Responsividade */
 @media (max-width: 768px) {

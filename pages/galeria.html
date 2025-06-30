@@ -4,28 +4,45 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Galeria - Cervejaria Fratelli</title>
-    <!-- Bootstrap CSS -->
+
+    <meta
+      property="og:title"
+      content="Galeria de Fotos - Cervejaria Fratelli"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:description"
+      content="Explore os momentos especiais vividos em nossos casamentos, eventos corporativos e muito mais."
+    />
+    <meta
+      property="og:image"
+      content="https://alessandrotostes.github.io/cervejaria_fratelli/images/casamentos/casamento%20fratelli%201.jpg"
+    />
+    <meta
+      property="og:url"
+      content="https://alessandrotostes.github.io/cervejaria_fratelli/pages/galeria.html"
+    />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <!-- Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <!-- CSS Personalizado -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css"
+    />
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/gallery.css" />
     <link rel="stylesheet" href="../css/age-verification.css" />
   </head>
   <body>
-    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
       <div class="container">
         <a class="navbar-brand" href="../index.html">
@@ -83,7 +100,6 @@
       </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero-section">
       <div class="overlay"></div>
       <div class="container h-100">
@@ -103,7 +119,6 @@
       </div>
     </section>
 
-    <!-- Gallery Filter Section -->
     <section class="py-5">
       <div class="container">
         <div class="row">
@@ -133,17 +148,15 @@
               <button class="filter-btn" data-filter="comidas">
                 Gastronomia
               </button>
-              <button class="filter-btn" data-filter="outros">Outros</button>
+              <button class="filter-btn" data-filter="drinks">Drinks</button>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Gallery Section -->
     <section id="galeria" class="pb-5">
       <div class="container">
-        <!-- Casamentos -->
         <div class="row mb-5" id="casamentos">
           <div class="col-12 mb-4">
             <h3 class="gallery-category-title">Casamentos</h3>
@@ -160,50 +173,70 @@
             class="col-md-4 col-sm-6 gallery-item casamentos"
             data-category="casamentos"
           >
-            <div class="gallery-img-container">
-              <img
-                class="gallery-img"
-                src="../images/casamentos/casamento fratelli 1.jpg"
-                alt="Casamento"
-              />
-              <div class="gallery-img-title">
-                Celebração de casamento no salão principal
+            <a
+              href="../images/casamentos/casamento fratelli 1.jpg"
+              data-lightbox="casamentos"
+              data-title="Celebração de casamento no salão principal"
+            >
+              <div class="gallery-img-container">
+                <img
+                  class="gallery-img"
+                  src="../images/casamentos/casamento fratelli 1.jpg"
+                  alt="Casamento"
+                  loading="lazy"
+                />
+                <div class="gallery-img-title">
+                  Celebração de casamento no salão principal
+                </div>
               </div>
-            </div>
+            </a>
           </div>
           <div
             class="col-md-4 col-sm-6 gallery-item casamentos"
             data-category="casamentos"
           >
-            <div class="gallery-img-container">
-              <img
-                class="gallery-img"
-                src="../images/casamentos/casamento fratelli 2.jpg"
-                alt="Casamento"
-              />
-              <div class="gallery-img-title">
-                Decoração romântica para cerimônia
+            <a
+              href="../images/casamentos/casamento fratelli 2.jpg"
+              data-lightbox="casamentos"
+              data-title="Decoração romântica para cerimônia"
+            >
+              <div class="gallery-img-container">
+                <img
+                  class="gallery-img"
+                  src="../images/casamentos/casamento fratelli 2.jpg"
+                  alt="Casamento"
+                  loading="lazy"
+                />
+                <div class="gallery-img-title">
+                  Decoração romântica para cerimônia
+                </div>
               </div>
-            </div>
+            </a>
           </div>
           <div
             class="col-md-4 col-sm-6 gallery-item casamentos"
             data-category="casamentos"
           >
-            <div class="gallery-img-container">
-              <img
-                class="gallery-img"
-                src="../images/casamentos/casamento fratelli 3.jpg"
-                alt="Casamento"
-              />
-              <div class="gallery-img-title">
-                Brinde dos noivos com nossos chopps artesanais
+            <a
+              href="../images/casamentos/casamento fratelli 3.jpg"
+              data-lightbox="casamentos"
+              data-title="Brinde dos noivos com nossos chopps artesanais"
+            >
+              <div class="gallery-img-container">
+                <img
+                  class="gallery-img"
+                  src="../images/casamentos/casamento fratelli 3.jpg"
+                  alt="Casamento"
+                  loading="lazy"
+                />
+                <div class="gallery-img-title">
+                  Brinde dos noivos com nossos chopps artesanais
+                </div>
               </div>
-            </div>
+            </a>
           </div>
         </div>
 
-        <!-- Eventos Corporativos -->
         <div class="row mb-5" id="corporativos">
           <div class="col-12 mb-4">
             <h3 class="gallery-category-title">Eventos Corporativos</h3>
@@ -221,50 +254,70 @@
             class="col-md-4 col-sm-6 gallery-item corporativos"
             data-category="corporativos"
           >
-            <div class="gallery-img-container">
-              <img
-                class="gallery-img"
-                src="../images/placeholder-corporativo1.jpg"
-                alt="Evento Corporativo"
-              />
-              <div class="gallery-img-title">
-                Confraternização de fim de ano
+            <a
+              href="../images/placeholder-corporativo1.jpg"
+              data-lightbox="corporativos"
+              data-title="Confraternização de fim de ano"
+            >
+              <div class="gallery-img-container">
+                <img
+                  class="gallery-img"
+                  src="../images/placeholder-corporativo1.jpg"
+                  alt="Evento Corporativo"
+                  loading="lazy"
+                />
+                <div class="gallery-img-title">
+                  Confraternização de fim de ano
+                </div>
               </div>
-            </div>
+            </a>
           </div>
           <div
             class="col-md-4 col-sm-6 gallery-item corporativos"
             data-category="corporativos"
           >
-            <div class="gallery-img-container">
-              <img
-                class="gallery-img"
-                src="../images/placeholder-corporativo2.jpg"
-                alt="Evento Corporativo"
-              />
-              <div class="gallery-img-title">
-                Workshop com degustação de cervejas
+            <a
+              href="../images/placeholder-corporativo2.jpg"
+              data-lightbox="corporativos"
+              data-title="Workshop com degustação de cervejas"
+            >
+              <div class="gallery-img-container">
+                <img
+                  class="gallery-img"
+                  src="../images/placeholder-corporativo2.jpg"
+                  alt="Evento Corporativo"
+                  loading="lazy"
+                />
+                <div class="gallery-img-title">
+                  Workshop com degustação de cervejas
+                </div>
               </div>
-            </div>
+            </a>
           </div>
           <div
             class="col-md-4 col-sm-6 gallery-item corporativos"
             data-category="corporativos"
           >
-            <div class="gallery-img-container">
-              <img
-                class="gallery-img"
-                src="../images/placeholder-corporativo3.jpg"
-                alt="Evento Corporativo"
-              />
-              <div class="gallery-img-title">
-                Lançamento de produto com coquetel
+            <a
+              href="../images/placeholder-corporativo3.jpg"
+              data-lightbox="corporativos"
+              data-title="Lançamento de produto com coquetel"
+            >
+              <div class="gallery-img-container">
+                <img
+                  class="gallery-img"
+                  src="../images/placeholder-corporativo3.jpg"
+                  alt="Evento Corporativo"
+                  loading="lazy"
+                />
+                <div class="gallery-img-title">
+                  Lançamento de produto com coquetel
+                </div>
               </div>
-            </div>
+            </a>
           </div>
         </div>
 
-        <!-- Eventos Externos -->
         <div class="row mb-5" id="externos">
           <div class="col-12 mb-4">
             <h3 class="gallery-category-title">Eventos Externos</h3>
@@ -282,50 +335,70 @@
             class="col-md-4 col-sm-6 gallery-item externos"
             data-category="externos"
           >
-            <div class="gallery-img-container">
-              <img
-                class="gallery-img"
-                src="../images/chopeira-externa-cervejaria-fratelli/evento-externo-cervejaria-fratelli1.jpg"
-                alt="Evento Externo"
-              />
-              <div class="gallery-img-title">
-                Chopeira em festa de aniversário
+            <a
+              href="../images/chopeira-externa-cervejaria-fratelli/evento-externo-cervejaria-fratelli1.jpg"
+              data-lightbox="externos"
+              data-title="Chopeira em festa de aniversário"
+            >
+              <div class="gallery-img-container">
+                <img
+                  class="gallery-img"
+                  src="../images/chopeira-externa-cervejaria-fratelli/evento-externo-cervejaria-fratelli1.jpg"
+                  alt="Evento Externo"
+                  loading="lazy"
+                />
+                <div class="gallery-img-title">
+                  Chopeira em festa de aniversário
+                </div>
               </div>
-            </div>
+            </a>
           </div>
           <div
             class="col-md-4 col-sm-6 gallery-item externos"
             data-category="externos"
           >
-            <div class="gallery-img-container">
-              <img
-                class="gallery-img"
-                src="../images/chopeira-externa-cervejaria-fratelli/evento-externo-cervejaria-fratelli2.jpg"
-                alt="Evento Externo"
-              />
-              <div class="gallery-img-title">
-                Chopeira em casamento ao ar livre
+            <a
+              href="../images/chopeira-externa-cervejaria-fratelli/evento-externo-cervejaria-fratelli2.jpg"
+              data-lightbox="externos"
+              data-title="Chopeira em casamento ao ar livre"
+            >
+              <div class="gallery-img-container">
+                <img
+                  class="gallery-img"
+                  src="../images/chopeira-externa-cervejaria-fratelli/evento-externo-cervejaria-fratelli2.jpg"
+                  alt="Evento Externo"
+                  loading="lazy"
+                />
+                <div class="gallery-img-title">
+                  Chopeira em casamento ao ar livre
+                </div>
               </div>
-            </div>
+            </a>
           </div>
           <div
             class="col-md-4 col-sm-6 gallery-item externos"
             data-category="externos"
           >
-            <div class="gallery-img-container">
-              <img
-                class="gallery-img"
-                src="../images/chopeira-externa-cervejaria-fratelli/evento-externo-cervejaria-fratelli3.jpg"
-                alt="Evento Externo"
-              />
-              <div class="gallery-img-title">
-                Chopeira em evento corporativo externo
+            <a
+              href="../images/chopeira-externa-cervejaria-fratelli/evento-externo-cervejaria-fratelli3.jpg"
+              data-lightbox="externos"
+              data-title="Chopeira em evento corporativo externo"
+            >
+              <div class="gallery-img-container">
+                <img
+                  class="gallery-img"
+                  src="../images/chopeira-externa-cervejaria-fratelli/evento-externo-cervejaria-fratelli3.jpg"
+                  alt="Evento Externo"
+                  loading="lazy"
+                />
+                <div class="gallery-img-title">
+                  Chopeira em evento corporativo externo
+                </div>
               </div>
-            </div>
+            </a>
           </div>
         </div>
 
-        <!-- Gastronomia -->
         <div class="row mb-5" id="comidas">
           <div class="col-12 mb-4">
             <h3 class="gallery-category-title">Gastronomia</h3>
@@ -343,105 +416,149 @@
             class="col-md-4 col-sm-6 gallery-item comidas"
             data-category="comidas"
           >
-            <div class="gallery-img-container">
-              <img
-                class="gallery-img"
-                src="../images/placeholder-comida1.jpg"
-                alt="Gastronomia"
-              />
-              <div class="gallery-img-title">Tábua de frios especial</div>
-            </div>
+            <a
+              href="../images/comidas/porcaofratelli-min.JPG"
+              data-lightbox="comidas"
+              data-title="Tábua de frios especial"
+            >
+              <div class="gallery-img-container">
+                <img
+                  class="gallery-img"
+                  src="../images/comidas/porcaofratelli-min.JPG"
+                  alt="Gastronomia"
+                  loading="lazy"
+                />
+                <div class="gallery-img-title">Tábua de frios especial</div>
+              </div>
+            </a>
           </div>
           <div
             class="col-md-4 col-sm-6 gallery-item comidas"
             data-category="comidas"
           >
-            <div class="gallery-img-container">
-              <img
-                class="gallery-img"
-                src="../images/placeholder-comida2.jpg"
-                alt="Gastronomia"
-              />
-              <div class="gallery-img-title">
-                Costela ao molho de cerveja preta
+            <a
+              href="../images/comidas/porcaofratelli1-min.JPG"
+              data-lightbox="comidas"
+              data-title="Costela ao molho de cerveja preta"
+            >
+              <div class="gallery-img-container">
+                <img
+                  class="gallery-img"
+                  src="../images/comidas/porcaofratelli1-min.JPG"
+                  alt="Gastronomia"
+                  loading="lazy"
+                />
+                <div class="gallery-img-title">
+                  Costela ao molho de cerveja preta
+                </div>
               </div>
-            </div>
+            </a>
           </div>
           <div
             class="col-md-4 col-sm-6 gallery-item comidas"
             data-category="comidas"
           >
-            <div class="gallery-img-container">
-              <img
-                class="gallery-img"
-                src="../images/placeholder-comida3.jpg"
-                alt="Gastronomia"
-              />
-              <div class="gallery-img-title">
-                Sobremesa com redução de cerveja
+            <a
+              href="../images/comidas/barriguinhafratelli-min.JPG"
+              data-lightbox="comidas"
+              data-title="Sobremesa com redução de cerveja"
+            >
+              <div class="gallery-img-container">
+                <img
+                  class="gallery-img"
+                  src="../images/comidas/barriguinhafratelli-min.JPG"
+                  alt="Gastronomia"
+                  loading="lazy"
+                />
+                <div class="gallery-img-title">
+                  Sobremesa com redução de cerveja
+                </div>
               </div>
-            </div>
+            </a>
           </div>
         </div>
 
-        <!-- Outros -->
-        <div class="row mb-5" id="outros">
+        <div class="row mb-5" id="drinks">
           <div class="col-12 mb-4">
-            <h3 class="gallery-category-title">Outros</h3>
+            <h3 class="gallery-category-title">Drinks</h3>
             <p class="gallery-category-description">
-              A Cervejaria Fratelli é palco de diversos momentos especiais além
-              dos eventos tradicionais. Aqui você encontra registros de visitas
-              guiadas à nossa fábrica, festivais de cerveja que realizamos
-              anualmente, competições de harmonização, cursos de produção
-              cervejeira e muitos outros momentos que fazem parte da nossa
-              história e da experiência única que proporcionamos aos nossos
-              visitantes e apreciadores.
+              Nem só de chopp vive a nossa paixão. Descubra nossa carta de
+              drinks, onde a mesma criatividade e o cuidado artesanal dos nossos
+              mestres cervejeiros se transformam em coquetéis surpreendentes. De
+              clássicos reinventados a criações exclusivas com ingredientes
+              frescos, cada drink é pensado para oferecer uma experiência de
+              sabor única e refrescante. O complemento perfeito para qualquer
+              momento na Fratelli.
             </p>
           </div>
           <div
-            class="col-md-4 col-sm-6 gallery-item outros"
-            data-category="outros"
+            class="col-md-4 col-sm-6 gallery-item drinks"
+            data-category="drinks"
           >
-            <div class="gallery-img-container">
-              <img
-                class="gallery-img"
-                src="../images/placeholder-outros1.jpg"
-                alt="Outros Eventos"
-              />
-              <div class="gallery-img-title">Festival de Cerveja Artesanal</div>
-            </div>
+            <a
+              href="../images/drinks/drinkmorango-cervejariafratelli-min.JPG"
+              data-lightbox="drinks"
+              data-title="Festival de Cerveja Artesanal"
+            >
+              <div class="gallery-img-container">
+                <img
+                  class="gallery-img"
+                  src="../images/drinks/drinkmorango-cervejariafratelli-min.JPG"
+                  alt="Drink de Morango"
+                  loading="lazy"
+                />
+                <div class="gallery-img-title">
+                  Festival de Cerveja Artesanal
+                </div>
+              </div>
+            </a>
           </div>
           <div
-            class="col-md-4 col-sm-6 gallery-item outros"
-            data-category="outros"
+            class="col-md-4 col-sm-6 gallery-item drinks"
+            data-category="drinks"
           >
-            <div class="gallery-img-container">
-              <img
-                class="gallery-img"
-                src="../images/placeholder-outros2.jpg"
-                alt="Outros Eventos"
-              />
-              <div class="gallery-img-title">Visita guiada à fábrica</div>
-            </div>
+            <a
+              href="../images/drinks/drinkmaracuja-min.JPG"
+              data-lightbox="drinks"
+              data-title="Visita guiada à fábrica"
+            >
+              <div class="gallery-img-container">
+                <img
+                  class="gallery-img"
+                  src="../images/drinks/drinkmaracuja-min.JPG"
+                  alt="Drink de Maracujá"
+                  loading="lazy"
+                />
+                <div class="gallery-img-title">Visita guiada à fábrica</div>
+              </div>
+            </a>
           </div>
           <div
-            class="col-md-4 col-sm-6 gallery-item outros"
-            data-category="outros"
+            class="col-md-4 col-sm-6 gallery-item drinks"
+            data-category="drinks"
           >
-            <div class="gallery-img-container">
-              <img
-                class="gallery-img"
-                src="../images/placeholder-outros3.jpg"
-                alt="Outros Eventos"
-              />
-              <div class="gallery-img-title">Curso de produção de cerveja</div>
-            </div>
+            <a
+              href="../images/drinks/drinkhortela-min.JPG"
+              data-lightbox="drinks"
+              data-title="Curso de produção de cerveja"
+            >
+              <div class="gallery-img-container">
+                <img
+                  class="gallery-img"
+                  src="../images/drinks/drinkhortela-min.JPG"
+                  alt="Drink de Hortelã"
+                  loading="lazy"
+                />
+                <div class="gallery-img-title">
+                  Curso de produção de cerveja
+                </div>
+              </div>
+            </a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
       <div class="container">
         <div class="row">
@@ -498,9 +615,12 @@
       </div>
     </footer>
 
-    <!-- Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- JavaScript Personalizado -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+
     <script src="../js/script.js"></script>
     <script src="../js/gallery.js"></script>
     <script src="../js/age-verification.js"></script>

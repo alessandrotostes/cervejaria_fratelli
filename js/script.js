@@ -42,6 +42,28 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
+  const backToTopBtn = document.getElementById("backToTopBtn");
+  if (backToTopBtn) {
+    // Adiciona uma verificação para segurança
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        backToTopBtn.classList.add("show");
+      } else {
+        backToTopBtn.classList.remove("show");
+      }
+    });
+  }
+  const progressBar = document.querySelector(".progress-bar");
+
+  window.addEventListener("scroll", () => {
+    const scrollTop = document.documentElement.scrollTop;
+    const scrollHeight =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
+    const scrollPercentage = (scrollTop / scrollHeight) * 100;
+
+    progressBar.style.width = scrollPercentage + "%";
+  });
 
   // Inicializar o destaque do menu
   highlightNavItem();
