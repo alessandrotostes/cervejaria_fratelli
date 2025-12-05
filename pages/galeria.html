@@ -14,14 +14,8 @@
       property="og:description"
       content="Explore os momentos especiais vividos em nossos casamentos, eventos corporativos e muito mais."
     />
-    <meta
-      property="og:image"
-      content="https://alessandrotostes.github.io/cervejaria_fratelli/images/casamentos/casamento%20fratelli%201.jpg"
-    />
-    <meta
-      property="og:url"
-      content="https://alessandrotostes.github.io/cervejaria_fratelli/pages/galeria.html"
-    />
+    <meta property="og:image" content="../images/logo.jpg" />
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -38,12 +32,14 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css"
     />
+
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/gallery.css" />
     <link rel="stylesheet" href="../css/age-verification.css" />
   </head>
   <body>
     <div class="progress-bar-container"><div class="progress-bar"></div></div>
+
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
       <div class="container">
         <a class="navbar-brand" href="../index.html">
@@ -76,18 +72,13 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../index.html#eventos-local"
-                >Eventos no Local</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../index.html#eventos-externos"
-                >Eventos Externos</a
-              >
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="../index.html#nossos-chopps"
                 >Nossos Chopps</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html#eventos-local"
+                >Espaço & Eventos</a
               >
             </li>
             <li class="nav-item">
@@ -101,419 +92,516 @@
       </div>
     </nav>
 
-    <section class="hero-section">
+    <section class="hero-section gallery-hero">
       <div class="overlay"></div>
       <div class="container h-100">
         <div class="row h-100 align-items-center">
           <div class="col-12 text-center hero-content">
-            <img
-              src="../images/logo.jpg"
-              alt="Cervejaria Fratelli"
-              class="hero-logo"
-            />
-            <h1 class="hero-title">Galeria</h1>
-            <p class="hero-subtitle">
-              Momentos especiais na Cervejaria Fratelli
+            <h1 class="hero-title animate-fadeInUp">Nossos Momentos</h1>
+            <p
+              class="hero-subtitle animate-fadeInUp"
+              style="color: var(--secondary-color)"
+            >
+              Colecionando memórias inesquecíveis em cada gole e celebração.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="py-5">
+    <section class="py-5 filter-section">
       <div class="container">
-        <div class="row">
-          <div class="col-12 text-center mb-4">
-            <div class="section-title">
-              <h2>Galeria de Fotos</h2>
-              <div class="divider mx-auto"></div>
-            </div>
-            <p class="lead">
-              Explore os momentos especiais vividos na Cervejaria Fratelli
-            </p>
-          </div>
-        </div>
-        <div class="row mb-4">
-          <div class="col-12">
-            <div class="gallery-filter text-center">
+        <div class="row mb-5 justify-content-center">
+          <div class="col-lg-10">
+            <div class="gallery-filter-container animate-fadeInUp">
               <button class="filter-btn active" data-filter="all">Todos</button>
-              <button class="filter-btn" data-filter="casamentos">
-                Casamentos
-              </button>
-              <button class="filter-btn" data-filter="corporativos">
-                Eventos Corporativos
-              </button>
-              <button class="filter-btn" data-filter="externos">
-                Eventos Externos
-              </button>
               <button class="filter-btn" data-filter="comidas">
                 Gastronomia
               </button>
               <button class="filter-btn" data-filter="drinks">Drinks</button>
+              <button class="filter-btn" data-filter="casamentos">
+                Casamentos
+              </button>
+              <button class="filter-btn" data-filter="externos">
+                Externos
+              </button>
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <section id="galeria" class="pb-5">
-      <div class="container">
-        <div class="row mb-5" id="casamentos">
-          <div class="col-12 mb-4">
-            <h3 class="gallery-category-title">Casamentos</h3>
-            <p class="gallery-category-description">
-              A Cervejaria Fratelli é o cenário perfeito para celebrar o amor.
-              Nosso espaço aconchegante e rústico proporciona um ambiente único
-              para casamentos inesquecíveis. Cada detalhe é cuidadosamente
-              planejado para tornar este momento ainda mais especial, desde a
-              decoração até o cardápio personalizado e, claro, nossas cervejas
-              artesanais premiadas que encantam todos os convidados.
-            </p>
-          </div>
-          <div
-            class="col-md-4 col-sm-6 gallery-item casamentos"
-            data-category="casamentos"
-          >
-            <a
-              href="../images/casamentos/casamento fratelli 1.jpg"
-              data-lightbox="casamentos"
-              data-title="Celebração de casamento na Fratelli"
-            >
-              <div class="gallery-img-container">
+        <div class="row g-4 gallery-container">
+          <div class="col-md-4 col-sm-6 gallery-item comidas animate-fadeInUp">
+            <div class="gallery-card">
+              <a
+                href="../images/comidas/barriguinhafratelli-min.JPG"
+                data-lightbox="galeria"
+                data-title="Gastronomia Fratelli"
+              >
                 <img
+                  src="../images/comidas/barriguinhafratelli-min.JPG"
+                  alt="Comida"
                   class="gallery-img"
+                  loading="lazy"
+                />
+                <div class="gallery-overlay">
+                  <div class="overlay-content">
+                    <i class="fas fa-utensils mb-2"></i>
+                    <span>Ver Detalhes</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 gallery-item comidas animate-fadeInUp">
+            <div class="gallery-card">
+              <a
+                href="../images/comidas/dadinhos.jpg"
+                data-lightbox="galeria"
+                data-title="Gastronomia Fratelli"
+              >
+                <img
+                  src="../images/comidas/dadinhos.jpg"
+                  alt="Comida"
+                  class="gallery-img"
+                  loading="lazy"
+                />
+                <div class="gallery-overlay">
+                  <div class="overlay-content">
+                    <i class="fas fa-utensils mb-2"></i>
+                    <span>Ver Detalhes</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 gallery-item comidas animate-fadeInUp">
+            <div class="gallery-card">
+              <a
+                href="../images/comidas/batatarusticafratelli-min.JPG"
+                data-lightbox="galeria"
+                data-title="Gastronomia Fratelli"
+              >
+                <img
+                  src="../images/comidas/batatarusticafratelli-min.JPG"
+                  alt="Comida"
+                  class="gallery-img"
+                  loading="lazy"
+                />
+                <div class="gallery-overlay">
+                  <div class="overlay-content">
+                    <i class="fas fa-utensils mb-2"></i>
+                    <span>Ver Detalhes</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 gallery-item comidas animate-fadeInUp">
+            <div class="gallery-card">
+              <a
+                href="../images/comidas/croquetefratelli1-min.JPG"
+                data-lightbox="galeria"
+                data-title="Gastronomia Fratelli"
+              >
+                <img
+                  src="../images/comidas/croquetefratelli1-min.JPG"
+                  alt="Comida"
+                  class="gallery-img"
+                  loading="lazy"
+                />
+                <div class="gallery-overlay">
+                  <div class="overlay-content">
+                    <i class="fas fa-utensils mb-2"></i>
+                    <span>Ver Detalhes</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 gallery-item comidas animate-fadeInUp">
+            <div class="gallery-card">
+              <a
+                href="../images/comidas/joelho.jpg"
+                data-lightbox="galeria"
+                data-title="Gastronomia Fratelli"
+              >
+                <img
+                  src="../images/comidas/joelho.jpg"
+                  alt="Comida"
+                  class="gallery-img"
+                  loading="lazy"
+                />
+                <div class="gallery-overlay">
+                  <div class="overlay-content">
+                    <i class="fas fa-utensils mb-2"></i>
+                    <span>Ver Detalhes</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 gallery-item comidas animate-fadeInUp">
+            <div class="gallery-card">
+              <a
+                href="../images/comidas/lanche.jpg"
+                data-lightbox="galeria"
+                data-title="Gastronomia Fratelli"
+              >
+                <img
+                  src="../images/comidas/lanche.jpg"
+                  alt="Comida"
+                  class="gallery-img"
+                  loading="lazy"
+                />
+                <div class="gallery-overlay">
+                  <div class="overlay-content">
+                    <i class="fas fa-utensils mb-2"></i>
+                    <span>Ver Detalhes</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 gallery-item comidas animate-fadeInUp">
+            <div class="gallery-card">
+              <a
+                href="../images/comidas/pastelfratelli2-min.JPG"
+                data-lightbox="galeria"
+                data-title="Gastronomia Fratelli"
+              >
+                <img
+                  src="../images/comidas/pastelfratelli2-min.JPG"
+                  alt="Comida"
+                  class="gallery-img"
+                  loading="lazy"
+                />
+                <div class="gallery-overlay">
+                  <div class="overlay-content">
+                    <i class="fas fa-utensils mb-2"></i>
+                    <span>Ver Detalhes</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 gallery-item comidas animate-fadeInUp">
+            <div class="gallery-card">
+              <a
+                href="../images/comidas/porcaocarne.jpg"
+                data-lightbox="galeria"
+                data-title="Gastronomia Fratelli"
+              >
+                <img
+                  src="../images/comidas/porcaocarne.jpg"
+                  alt="Comida"
+                  class="gallery-img"
+                  loading="lazy"
+                />
+                <div class="gallery-overlay">
+                  <div class="overlay-content">
+                    <i class="fas fa-utensils mb-2"></i>
+                    <span>Ver Detalhes</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6 gallery-item drinks animate-fadeInUp">
+            <div class="gallery-card">
+              <a
+                href="../images/drinks/drinkmorango-cervejariafratelli-min.JPG"
+                data-lightbox="galeria"
+                data-title="Drink Fratelli"
+              >
+                <img
+                  src="../images/drinks/drinkmorango-cervejariafratelli-min.JPG"
+                  alt="Drink"
+                  class="gallery-img"
+                  loading="lazy"
+                />
+                <div class="gallery-overlay">
+                  <div class="overlay-content">
+                    <i class="fas fa-cocktail mb-2"></i>
+                    <span>Ver Detalhes</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 gallery-item drinks animate-fadeInUp">
+            <div class="gallery-card">
+              <a
+                href="../images/drinks/drinkmorangolimao-min.JPG"
+                data-lightbox="galeria"
+                data-title="Drink Fratelli"
+              >
+                <img
+                  src="../images/drinks/drinkmorangolimao-min.JPG"
+                  alt="Drink"
+                  class="gallery-img"
+                  loading="lazy"
+                />
+                <div class="gallery-overlay">
+                  <div class="overlay-content">
+                    <i class="fas fa-cocktail mb-2"></i>
+                    <span>Ver Detalhes</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 gallery-item drinks animate-fadeInUp">
+            <div class="gallery-card">
+              <a
+                href="../images/drinks/drinkmaracuja-min.JPG"
+                data-lightbox="galeria"
+                data-title="Drink Fratelli"
+              >
+                <img
+                  src="../images/drinks/drinkmaracuja-min.JPG"
+                  alt="Drink"
+                  class="gallery-img"
+                  loading="lazy"
+                />
+                <div class="gallery-overlay">
+                  <div class="overlay-content">
+                    <i class="fas fa-cocktail mb-2"></i>
+                    <span>Ver Detalhes</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 gallery-item drinks animate-fadeInUp">
+            <div class="gallery-card">
+              <a
+                href="../images/drinks/drinkhortela-min.JPG"
+                data-lightbox="galeria"
+                data-title="Drink Fratelli"
+              >
+                <img
+                  src="../images/drinks/drinkhortela-min.JPG"
+                  alt="Drink"
+                  class="gallery-img"
+                  loading="lazy"
+                />
+                <div class="gallery-overlay">
+                  <div class="overlay-content">
+                    <i class="fas fa-cocktail mb-2"></i>
+                    <span>Ver Detalhes</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 gallery-item drinks animate-fadeInUp">
+            <div class="gallery-card">
+              <a
+                href="../images/drinks/drinklaranja-min.JPG"
+                data-lightbox="galeria"
+                data-title="Drink Fratelli"
+              >
+                <img
+                  src="../images/drinks/drinklaranja-min.JPG"
+                  alt="Drink"
+                  class="gallery-img"
+                  loading="lazy"
+                />
+                <div class="gallery-overlay">
+                  <div class="overlay-content">
+                    <i class="fas fa-cocktail mb-2"></i>
+                    <span>Ver Detalhes</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 gallery-item drinks animate-fadeInUp">
+            <div class="gallery-card">
+              <a
+                href="../images/drinks/drinkmelancia-min.JPG"
+                data-lightbox="galeria"
+                data-title="Drink Fratelli"
+              >
+                <img
+                  src="../images/drinks/drinkmelancia-min.JPG"
+                  alt="Drink"
+                  class="gallery-img"
+                  loading="lazy"
+                />
+                <div class="gallery-overlay">
+                  <div class="overlay-content">
+                    <i class="fas fa-cocktail mb-2"></i>
+                    <span>Ver Detalhes</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="col-md-4 col-sm-6 gallery-item casamentos animate-fadeInUp"
+          >
+            <div class="gallery-card">
+              <a
+                href="../images/casamentos/casamento fratelli 1.jpg"
+                data-lightbox="galeria"
+                data-title="Casamento na Fratelli"
+              >
+                <img
                   src="../images/casamentos/casamento fratelli 1.jpg"
                   alt="Casamento"
+                  class="gallery-img"
                   loading="lazy"
                 />
-              </div>
-            </a>
+                <div class="gallery-overlay">
+                  <div class="overlay-content">
+                    <i class="fas fa-heart mb-2"></i>
+                    <span>Ver Detalhes</span>
+                  </div>
+                </div>
+              </a>
+            </div>
           </div>
           <div
-            class="col-md-4 col-sm-6 gallery-item casamentos"
-            data-category="casamentos"
+            class="col-md-4 col-sm-6 gallery-item casamentos animate-fadeInUp"
           >
-            <a
-              href="../images/casamentos/casamento fratelli 2.jpg"
-              data-lightbox="casamentos"
-              data-title="Decoração romântica para cerimônia"
-            >
-              <div class="gallery-img-container">
+            <div class="gallery-card">
+              <a
+                href="../images/casamentos/casamento fratelli 2.jpg"
+                data-lightbox="galeria"
+                data-title="Casamento na Fratelli"
+              >
                 <img
-                  class="gallery-img"
                   src="../images/casamentos/casamento fratelli 2.jpg"
-                  alt="Casamento"
+                  alt="Decoração"
+                  class="gallery-img"
                   loading="lazy"
                 />
-              </div>
-            </a>
+                <div class="gallery-overlay">
+                  <div class="overlay-content">
+                    <i class="fas fa-heart mb-2"></i>
+                    <span>Ver Detalhes</span>
+                  </div>
+                </div>
+              </a>
+            </div>
           </div>
           <div
-            class="col-md-4 col-sm-6 gallery-item casamentos"
-            data-category="casamentos"
+            class="col-md-4 col-sm-6 gallery-item casamentos animate-fadeInUp"
           >
-            <a
-              href="../images/casamentos/casamento fratelli 3.jpg"
-              data-lightbox="casamentos"
-              data-title="Jardim Fratelli decorado para casamento"
-            >
-              <div class="gallery-img-container">
+            <div class="gallery-card">
+              <a
+                href="../images/casamentos/casamento-cervejariafratelli-min.jpg"
+                data-lightbox="galeria"
+                data-title="Decoração Romântica"
+              >
                 <img
+                  src="../images/casamentos/casamento-cervejariafratelli-min.jpg"
+                  alt="Decoração"
                   class="gallery-img"
-                  src="../images/casamentos/casamento fratelli 3.jpg"
-                  alt="Casamento"
                   loading="lazy"
                 />
-              </div>
-            </a>
+                <div class="gallery-overlay">
+                  <div class="overlay-content">
+                    <i class="fas fa-heart mb-2"></i>
+                    <span>Ver Detalhes</span>
+                  </div>
+                </div>
+              </a>
+            </div>
           </div>
-        </div>
+          <div
+            class="col-md-4 col-sm-6 gallery-item casamentos animate-fadeInUp"
+          >
+            <div class="gallery-card">
+              <a
+                href="../images/casamentos/casamento-fratelli-3.jpg"
+                data-lightbox="galeria"
+                data-title="Decoração Romântica"
+              >
+                <img
+                  src="../images/casamentos/casamento-fratelli-3.jpg"
+                  alt="Decoração"
+                  class="gallery-img"
+                  loading="lazy"
+                />
+                <div class="gallery-overlay">
+                  <div class="overlay-content">
+                    <i class="fas fa-heart mb-2"></i>
+                    <span>Ver Detalhes</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
 
-        <div class="row mb-5" id="corporativos">
-          <div class="col-12 mb-4">
-            <h3 class="gallery-category-title">Eventos Corporativos</h3>
-            <p class="gallery-category-description">
-              Transforme suas reuniões corporativas em experiências memoráveis
-              na Cervejaria Fratelli. Nosso espaço versátil se adapta a
-              diferentes formatos de eventos empresariais, desde
-              confraternizações descontraídas até reuniões formais. Oferecemos
-              infraestrutura completa, gastronomia de qualidade e, é claro,
-              nossas cervejas artesanais que tornam qualquer evento corporativo
-              mais agradável e produtivo.
-            </p>
-          </div>
-          <div
-            class="col-md-4 col-sm-6 gallery-item corporativos"
-            data-category="corporativos"
-          >
-            <a
-              href="../images/placeholder-corporativo1.jpg"
-              data-lightbox="corporativos"
-              data-title="Confraternização de fim de ano"
-            >
-              <div class="gallery-img-container">
+          <div class="col-md-4 col-sm-6 gallery-item externos animate-fadeInUp">
+            <div class="gallery-card">
+              <a
+                href="../images/chopeira-externa-cervejaria-fratelli/evento-externo-cervejaria-fratelli1.jpg"
+                data-lightbox="galeria"
+                data-title="Evento Externo"
+              >
                 <img
-                  class="gallery-img"
-                  src="../images/placeholder-corporativo1.jpg"
-                  alt="Evento Corporativo"
-                  loading="lazy"
-                />
-              </div>
-            </a>
-          </div>
-          <div
-            class="col-md-4 col-sm-6 gallery-item corporativos"
-            data-category="corporativos"
-          >
-            <a
-              href="../images/placeholder-corporativo2.jpg"
-              data-lightbox="corporativos"
-              data-title="Workshop com degustação de cervejas"
-            >
-              <div class="gallery-img-container">
-                <img
-                  class="gallery-img"
-                  src="../images/placeholder-corporativo2.jpg"
-                  alt="Evento Corporativo"
-                  loading="lazy"
-                />
-              </div>
-            </a>
-          </div>
-          <div
-            class="col-md-4 col-sm-6 gallery-item corporativos"
-            data-category="corporativos"
-          >
-            <a
-              href="../images/placeholder-corporativo3.jpg"
-              data-lightbox="corporativos"
-              data-title="Lançamento de produto com coquetel"
-            >
-              <div class="gallery-img-container">
-                <img
-                  class="gallery-img"
-                  src="../images/placeholder-corporativo3.jpg"
-                  alt="Evento Corporativo"
-                  loading="lazy"
-                />
-              </div>
-            </a>
-          </div>
-        </div>
-
-        <div class="row mb-5" id="externos">
-          <div class="col-12 mb-4">
-            <h3 class="gallery-category-title">Eventos Externos</h3>
-            <p class="gallery-category-description">
-              Leve a qualidade da Cervejaria Fratelli para onde você quiser.
-              Nossas chopeiras profissionais estão presentes nos mais diversos
-              eventos externos, garantindo que a experiência autêntica de nossas
-              cervejas artesanais possa ser apreciada em qualquer lugar. Com
-              equipe especializada para instalação e manutenção, oferecemos
-              soluções completas para festas, eventos corporativos ao ar livre,
-              casamentos em locais alternativos e muito mais.
-            </p>
-          </div>
-          <div
-            class="col-md-4 col-sm-6 gallery-item externos"
-            data-category="externos"
-          >
-            <a
-              href="../images/chopeira-externa-cervejaria-fratelli/evento-externo-cervejaria-fratelli1.jpg"
-              data-lightbox="externos"
-              data-title="Chopeira em festa de aniversário"
-            >
-              <div class="gallery-img-container">
-                <img
-                  class="gallery-img"
                   src="../images/chopeira-externa-cervejaria-fratelli/evento-externo-cervejaria-fratelli1.jpg"
-                  alt="Evento Externo"
+                  alt="Chopeira"
+                  class="gallery-img"
                   loading="lazy"
                 />
-              </div>
-            </a>
+                <div class="gallery-overlay">
+                  <div class="overlay-content">
+                    <i class="fas fa-beer mb-2"></i>
+                    <span>Ver Detalhes</span>
+                  </div>
+                </div>
+              </a>
+            </div>
           </div>
-          <div
-            class="col-md-4 col-sm-6 gallery-item externos"
-            data-category="externos"
-          >
-            <a
-              href="../images/chopeira-externa-cervejaria-fratelli/evento-externo-cervejaria-fratelli2.jpg"
-              data-lightbox="externos"
-              data-title="Chopeira em casamento ao ar livre"
-            >
-              <div class="gallery-img-container">
+          <div class="col-md-4 col-sm-6 gallery-item externos animate-fadeInUp">
+            <div class="gallery-card">
+              <a
+                href="../images/chopeira-externa-cervejaria-fratelli/evento-externo-cervejaria-fratelli2.jpg"
+                data-lightbox="galeria"
+                data-title="Evento Externo"
+              >
                 <img
-                  class="gallery-img"
                   src="../images/chopeira-externa-cervejaria-fratelli/evento-externo-cervejaria-fratelli2.jpg"
-                  alt="Evento Externo"
+                  alt="Chopeira"
+                  class="gallery-img"
                   loading="lazy"
                 />
-              </div>
-            </a>
+                <div class="gallery-overlay">
+                  <div class="overlay-content">
+                    <i class="fas fa-beer mb-2"></i>
+                    <span>Ver Detalhes</span>
+                  </div>
+                </div>
+              </a>
+            </div>
           </div>
-          <div
-            class="col-md-4 col-sm-6 gallery-item externos"
-            data-category="externos"
-          >
-            <a
-              href="../images/chopeira-externa-cervejaria-fratelli/evento-externo-cervejaria-fratelli3.jpg"
-              data-lightbox="externos"
-              data-title="Chopeira em evento corporativo externo"
-            >
-              <div class="gallery-img-container">
+          <div class="col-md-4 col-sm-6 gallery-item externos animate-fadeInUp">
+            <div class="gallery-card">
+              <a
+                href="../images/chopeira-externa-cervejaria-fratelli/evento-externo-cervejaria-fratelli3.jpg"
+                data-lightbox="galeria"
+                data-title="Evento Externo"
+              >
                 <img
-                  class="gallery-img"
                   src="../images/chopeira-externa-cervejaria-fratelli/evento-externo-cervejaria-fratelli3.jpg"
-                  alt="Evento Externo"
-                  loading="lazy"
-                />
-              </div>
-            </a>
-          </div>
-        </div>
-
-        <div class="row mb-5" id="comidas">
-          <div class="col-12 mb-4">
-            <h3 class="gallery-category-title">Gastronomia</h3>
-            <p class="gallery-category-description">
-              A experiência gastronômica na Cervejaria Fratelli é tão especial
-              quanto nossas cervejas. Nossa cozinha oferece pratos elaborados
-              que harmonizam perfeitamente com cada estilo de cerveja que
-              produzimos. Do petisco mais simples às criações mais sofisticadas,
-              cada item do cardápio é pensado para complementar e realçar os
-              sabores de nossas cervejas artesanais, proporcionando uma
-              experiência sensorial completa.
-            </p>
-          </div>
-          <div
-            class="col-md-4 col-sm-6 gallery-item comidas"
-            data-category="comidas"
-          >
-            <a
-              href="../images/comidas/porcaofratelli-min.JPG"
-              data-lightbox="comidas"
-              data-title="Entrada Fratelli"
-            >
-              <div class="gallery-img-container">
-                <img
+                  alt="Chopeira"
                   class="gallery-img"
-                  src="../images/comidas/porcaofratelli-min.JPG"
-                  alt="Gastronomia"
                   loading="lazy"
                 />
-              </div>
-            </a>
-          </div>
-          <div
-            class="col-md-4 col-sm-6 gallery-item comidas"
-            data-category="comidas"
-          >
-            <a
-              href="../images/comidas/porcaofratelli1-min.JPG"
-              data-lightbox="comidas"
-              data-title="Prato principal Fratelli"
-            >
-              <div class="gallery-img-container">
-                <img
-                  class="gallery-img"
-                  src="../images/comidas/porcaofratelli1-min.JPG"
-                  alt="Gastronomia"
-                  loading="lazy"
-                />
-              </div>
-            </a>
-          </div>
-          <div
-            class="col-md-4 col-sm-6 gallery-item comidas"
-            data-category="comidas"
-          >
-            <a
-              href="../images/comidas/barriguinhafratelli-min.JPG"
-              data-lightbox="comidas"
-              data-title="Barriguinha Fratelli"
-            >
-              <div class="gallery-img-container">
-                <img
-                  class="gallery-img"
-                  src="../images/comidas/barriguinhafratelli-min.JPG"
-                  alt="Gastronomia"
-                  loading="lazy"
-                />
-              </div>
-            </a>
-          </div>
-        </div>
-
-        <div class="row mb-5" id="drinks">
-          <div class="col-12 mb-4">
-            <h3 class="gallery-category-title">Drinks</h3>
-            <p class="gallery-category-description">
-              Nem só de chopp vive a nossa paixão. Descubra nossa carta de
-              drinks, onde a mesma criatividade e o cuidado artesanal dos nossos
-              mestres cervejeiros se transformam em coquetéis surpreendentes. De
-              clássicos reinventados a criações exclusivas com ingredientes
-              frescos, cada drink é pensado para oferecer uma experiência de
-              sabor única e refrescante. O complemento perfeito para qualquer
-              momento na Fratelli.
-            </p>
-          </div>
-          <div
-            class="col-md-4 col-sm-6 gallery-item drinks"
-            data-category="drinks"
-          >
-            <a
-              href="../images/drinks/drinkmorango-cervejariafratelli-min.JPG"
-              data-lightbox="drinks"
-              data-title="Drink de Morango"
-            >
-              <div class="gallery-img-container">
-                <img
-                  class="gallery-img"
-                  src="../images/drinks/drinkmorango-cervejariafratelli-min.JPG"
-                  alt="Drink de Morango"
-                  loading="lazy"
-                />
-              </div>
-            </a>
-          </div>
-          <div
-            class="col-md-4 col-sm-6 gallery-item drinks"
-            data-category="drinks"
-          >
-            <a
-              href="../images/drinks/drinkmaracuja-min.JPG"
-              data-lightbox="drinks"
-              data-title="Drink de Maracujá"
-            >
-              <div class="gallery-img-container">
-                <img
-                  class="gallery-img"
-                  src="../images/drinks/drinkmaracuja-min.JPG"
-                  alt="Drink de Maracujá"
-                  loading="lazy"
-                />
-              </div>
-            </a>
-          </div>
-          <div
-            class="col-md-4 col-sm-6 gallery-item drinks"
-            data-category="drinks"
-          >
-            <a
-              href="../images/drinks/drinkhortela-min.JPG"
-              data-lightbox="drinks"
-              data-title="Drink de Hortelã"
-            >
-              <div class="gallery-img-container">
-                <img
-                  class="gallery-img"
-                  src="../images/drinks/drinkhortela-min.JPG"
-                  alt="Drink de Hortelã"
-                  loading="lazy"
-                />
-              </div>
-            </a>
+                <div class="gallery-overlay">
+                  <div class="overlay-content">
+                    <i class="fas fa-beer mb-2"></i>
+                    <span>Ver Detalhes</span>
+                  </div>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -521,64 +609,138 @@
 
     <footer class="footer">
       <div class="container">
-        <div class="row">
-          <div class="col-lg-4 mb-5 mb-lg-0">
-            <img
-              src="../images/logo.jpg"
-              alt="Cervejaria Fratelli"
-              class="footer-logo"
-            />
+        <div class="row gy-5">
+          <div class="col-lg-4 text-center text-lg-start">
+            <a href="../index.html#home" class="d-inline-block mb-4">
+              <img
+                src="../images/logo.jpg"
+                alt="Cervejaria Fratelli"
+                class="footer-logo"
+              />
+            </a>
             <p class="footer-text">
               Tradição e qualidade em cada gole. A Cervejaria Fratelli oferece
               uma experiência única em cervejas artesanais desde 2010.
             </p>
-            <div class="social-links">
-              <a href="#" class="social-link"
-                ><i class="fab fa-facebook-f"></i
-              ></a>
-              <a href="#" class="social-link"
-                ><i class="fab fa-instagram"></i
-              ></a>
-              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <div
+              class="social-links justify-content-center justify-content-lg-start"
+            >
+              <a
+                href="https://www.facebook.com/Fratellireggiani/?locale=pt_BR"
+                target="_blank"
+                class="social-link"
+                aria-label="Facebook"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/fratellicervejaria_/"
+                target="_blank"
+                class="social-link"
+                aria-label="Instagram"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="https://wa.me/5527992741836"
+                target="_blank"
+                class="social-link"
+                aria-label="WhatsApp"
+              >
+                <i class="fab fa-whatsapp"></i>
+              </a>
             </div>
           </div>
-          <div class="col-lg-4 mb-5 mb-lg-0">
-            <h5 class="footer-title">Links Rápidos</h5>
-            <ul class="footer-links">
-              <li><a href="../index.html#home">Home</a></li>
-              <li><a href="../index.html#historia">Nossa História</a></li>
-              <li>
-                <a href="../index.html#eventos-local">Eventos no Local</a>
-              </li>
-              <li>
-                <a href="../index.html#eventos-externos">Eventos Externos</a>
-              </li>
-              <li><a href="../index.html#nossos-chopps">Nossos Chopps</a></li>
-              <li><a href="galeria.html">Galeria</a></li>
-            </ul>
+
+          <div class="col-lg-4 ps-lg-5">
+            <div class="footer-widget">
+              <h5 class="footer-title">Navegação</h5>
+              <ul class="footer-links">
+                <li>
+                  <a href="../index.html#home"
+                    ><i class="fas fa-chevron-right me-2"></i>Home</a
+                  >
+                </li>
+                <li>
+                  <a href="../index.html#historia"
+                    ><i class="fas fa-chevron-right me-2"></i>A Alquimia</a
+                  >
+                </li>
+                <li>
+                  <a href="../index.html#nossos-chopps"
+                    ><i class="fas fa-chevron-right me-2"></i>Nossos Chopps</a
+                  >
+                </li>
+                <li>
+                  <a href="../index.html#eventos-local"
+                    ><i class="fas fa-chevron-right me-2"></i>Espaço &
+                    Eventos</a
+                  >
+                </li>
+                <li>
+                  <a href="galeria.html"
+                    ><i class="fas fa-chevron-right me-2"></i>Galeria de
+                    Fotos</a
+                  >
+                </li>
+              </ul>
+            </div>
           </div>
+
           <div class="col-lg-4">
-            <h5 class="footer-title">Horário de Funcionamento</h5>
-            <ul class="footer-links">
-              <li>Segunda: Fechado</li>
-              <li>Terça a Sexta: 17h às 00h</li>
-              <li>Sábado: 16h às 00h</li>
-              <li>Domingo: Fechado</li>
-            </ul>
+            <div class="footer-widget">
+              <h5 class="footer-title">Funcionamento</h5>
+              <ul class="footer-hours">
+                <li>
+                  <span class="day">Segunda</span>
+                  <span class="time closed">Fechado</span>
+                </li>
+                <li>
+                  <span class="day">Terça a Sexta</span>
+                  <span class="time">17h às 00h</span>
+                </li>
+                <li>
+                  <span class="day">Sábado</span>
+                  <span class="time">16h às 00h</span>
+                </li>
+                <li>
+                  <span class="day">Domingo</span>
+                  <span class="time closed">Fechado</span>
+                </li>
+              </ul>
+              <div class="footer-address mt-4">
+                <p>
+                  <i class="fas fa-map-marker-alt text-secondary me-2"></i> Av.
+                  Saturnino Rangel Mauro, 1011<br />Vitória - ES
+                </p>
+              </div>
+            </div>
           </div>
         </div>
+
         <div class="footer-bottom">
-          <p class="copyright">
-            © 2025 Cervejaria Fratelli. Todos os direitos reservados.
-          </p>
+          <div class="row align-items-center">
+            <div class="col-md-12 text-center">
+              <p class="copyright mb-0">
+                © 2025 Cervejaria Fratelli. Todos os direitos reservados.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
 
+    <a
+      href="#"
+      id="backToTopBtn"
+      class="back-to-top-btn"
+      title="Voltar ao topo"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
 
     <script src="../js/script.js"></script>

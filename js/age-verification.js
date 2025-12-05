@@ -1,72 +1,86 @@
 // Script para verificação de idade
 document.addEventListener("DOMContentLoaded", function () {
-  // Verificar se o usuário já confirmou a idade anteriormente
+  // 1. Verificar se o usuário já confirmou a idade anteriormente
   const ageVerified = localStorage.getItem("ageVerified");
 
-  // Mostrar o modal apenas se o usuário ainda não tiver confirmado a idade
-  if (!ageVerified) {
-    // Criar o modal de verificação de idade
-    const ageVerificationModal = document.createElement("div");
-    ageVerificationModal.className = "age-verification-overlay";
-    ageVerificationModal.innerHTML = `
-            <div class="age-verification-container">
-                <div class="age-verification-logo">
-                    <img src="${
-                      window.location.pathname.includes("/pages/") ? "../" : ""
-                    }images/logo.jpg" alt="Cervejaria Fratelli">
-                </div>
-                <div class="age-verification-content">
-                    <h2 class="age-verification-title">VOCÊ TEM MAIS DE 18 ANOS?</h2>
-                    <p class="age-verification-text">Este site contém informações sobre bebidas alcoólicas e é destinado apenas para maiores de 18 anos.</p>
-                    <div class="age-verification-buttons">
-                        <button class="age-btn age-btn-no" id="ageButtonNo">Não</button>
-                        <button class="age-btn age-btn-yes" id="ageButtonYes">Sim</button>
-                    </div>
-                </div>
-                <div class="age-verification-denied" id="ageDenied">
-                    <h2 class="age-verification-denied-title">Acesso Negado</h2>
-                    <p class="age-verification-denied-text">Você ainda não pode acessar esse site.</p>
-                </div>
-            </div>
-        `;
-
-    // Adicionar o modal ao body
-    document.body.appendChild(ageVerificationModal);
-
-    // Impedir o scroll do body enquanto o modal estiver aberto
-    document.body.style.overflow = "hidden";
-
-    // Adicionar eventos aos botões
-    document
-      .getElementById("ageButtonYes")
-      .addEventListener("click", function () {
-        // Salvar no localStorage que o usuário confirmou a idade
-        localStorage.setItem("ageVerified", "true");
-
-        // Remover o modal com animação
-        ageVerificationModal.style.opacity = "0";
-        setTimeout(() => {
-          ageVerificationModal.remove();
-          // Permitir o scroll novamente
-          document.body.style.overflow = "auto";
-        }, 500);
-      });
-
-    document
-      .getElementById("ageButtonNo")
-      .addEventListener("click", function () {
-        // Esconder o conteúdo de verificação com animação
-        document.querySelector(".age-verification-content").style.opacity = "0";
-        setTimeout(() => {
-          document.querySelector(".age-verification-content").style.display =
-            "none";
-          // Mostrar a mensagem de acesso negado com animação
-          document.getElementById("ageDenied").style.display = "block";
-          setTimeout(() => {
-            document.getElementById("ageDenied").style.opacity = "1";
-          }, 100);
-        }, 500);
-      });
+  // Se já verificou, não faz nada e retorna
+  if (ageVerified === "true") {
+    return;
   }
+
+  // 2. Determinar o caminho correto da imagem do logo
+  // Se estivermos dentro da pasta /pages/, precisamos voltar um nível (../)
+  // Verifica se a URL contém "/pages/"
+  const isPagesDir = window.location.pathname.includes("/pages/");
+  // Verifica se estamos no GitHub Pages (geralmente tem o nome do repositório no caminho)
+  // Ajuste básico para garantir que funcione em subpastas
+  const imgPrefix = isPagesDir ? "../" : "";
+  const logoPath = `${imgPrefix}images/logo.jpg`;
+
+  // 3. Criar o HTML do modal dinamicamente
+  const ageVerificationModal = document.createElement("div");
+  ageVerificationModal.className = "age-verification-overlay";
+
+  ageVerificationModal.innerHTML = `
+      <div class="age-verification-container">
+          <div class="age-verification-logo">
+              <img src="${logoPath}" alt="Cervejaria Fratelli">
+          </div>
+          
+          <div class="age-verification-content">
+              <h2 class="age-verification-title">Você tem mais de 18 anos?</h2>
+              <p class="age-verification-text">
+                  Este site contém informações sobre bebidas alcoólicas e é destinado apenas para maiores de idade.
+              </p>
+              <div class="age-verification-buttons">
+                  <button class="age-btn age-btn-no" id="ageButtonNo">Não</button>
+                  <button class="age-btn age-btn-yes" id="ageButtonYes">Sim, tenho</button>
+              </div>
+          </div>
+
+          <div class="age-verification-denied" id="ageDenied">
+              <h2 class="age-verification-denied-title">Acesso Restrito</h2>
+              <p class="age-verification-denied-text">
+                  Desculpe, você precisa ter mais de 18 anos para acessar este conteúdo.
+              </p>
+              <a href="https://www.google.com" class="age-btn age-btn-no" style="display:inline-block; margin-top:20px; text-decoration:none;">Sair do Site</a>
+          </div>
+      </div>
+  `;
+
+  // 4. Adicionar o modal ao final do body
+  document.body.appendChild(ageVerificationModal);
+
+  // 5. Travar a rolagem da página
+  document.body.style.overflow = "hidden";
+
+  // 6. Lógica do Botão SIM
+  document
+    .getElementById("ageButtonYes")
+    .addEventListener("click", function () {
+      // Salvar no localStorage
+      localStorage.setItem("ageVerified", "true");
+
+      // Animação de saída
+      ageVerificationModal.style.transition = "opacity 0.5s ease";
+      ageVerificationModal.style.opacity = "0";
+
+      // Remover do DOM após animação
+      setTimeout(() => {
+        ageVerificationModal.remove();
+        document.body.style.overflow = "auto"; // Destrava a rolagem
+      }, 500);
+    });
+
+  // 7. Lógica do Botão NÃO
+  document.getElementById("ageButtonNo").addEventListener("click", function () {
+    const contentDiv = document.querySelector(".age-verification-content");
+    const deniedDiv = document.getElementById("ageDenied");
+
+    // Some com o conteúdo atual
+    contentDiv.style.display = "none";
+
+    // Mostra a mensagem de negado
+    deniedDiv.style.display = "block";
+  });
 });
-// Script para verificar a idade do usuário e exibir o modal de verificação

@@ -22,6 +22,7 @@
       property="og:url"
       content="https://alessandrotostes.github.io/cervejaria_fratelli/"
     />
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -34,11 +35,13 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/age-verification.css" />
   </head>
   <body>
     <div class="progress-bar-container"><div class="progress-bar"></div></div>
+
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
       <div class="container">
         <a class="navbar-brand" href="index.html">
@@ -66,16 +69,13 @@
               <a class="nav-link active" href="#home">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#historia">Nossa História</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#eventos-local">Eventos no Local</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#eventos-externos">Eventos Externos</a>
+              <a class="nav-link" href="#historia">Sobre nós</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#nossos-chopps">Nossos Chopps</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#eventos-local">Espaço & Eventos</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#contato">Contato</a>
@@ -100,57 +100,252 @@
                 class="hero-logo"
               />
               <h1 class="hero-title">Cervejaria Fratelli</h1>
-              <p class="hero-subtitle">Tradição e qualidade em cada gole</p>
-              <a href="#historia" class="btn hero-btn"
-                >Conheça Nossa História</a
+              <p class="hero-subtitle" style="color: var(--secondary-color)">
+                Nosso sobrenome é Qualidade
+              </p>
+              <a href="#nossos-chopps" class="btn hero-btn"
+                >Descobrir Nossos Sabores</a
               >
+            </div>
+          </div>
+        </div>
+
+        <a href="#historia" class="scroll-down-btn">
+          <span class="mouse">
+            <span class="wheel"></span>
+          </span>
+          <span class="arrow-down"></span>
+        </a>
+      </section>
+
+      <section id="historia" class="essence-section">
+        <div class="container">
+          <div class="row text-center mb-5">
+            <div class="col-12 section-title">
+              <h2>A Alquimia Fratelli</h2>
+              <div class="divider"></div>
+              <p class="lead">
+                Não fazemos apenas cerveja. Criamos experiências líquidas desde
+                2019.
+              </p>
+            </div>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="essence-card animate-fadeInUp">
+                <div class="essence-icon"><i class="fas fa-seedling"></i></div>
+                <h3>Ingredientes Puros</h3>
+                <p>
+                  Selecionamos maltes e lúpulos importados para garantir o sabor
+                  autêntico de cada estilo.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="essence-card animate-fadeInUp">
+                <div class="essence-icon">
+                  <i class="fas fa-hand-holding-heart"></i>
+                </div>
+                <h3>Produção Artesanal</h3>
+                <p>
+                  Dois irmãos, uma paixão. Cada lote é acompanhado pessoalmente
+                  para garantir a excelência.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="essence-card animate-fadeInUp">
+                <div class="essence-icon"><i class="fas fa-award"></i></div>
+                <h3>Sabor Premiado</h3>
+                <p>
+                  Receitas que conquistaram paladares exigentes e se tornaram
+                  referência na região.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="historia" class="historia-section">
+      <section id="nossos-chopps" class="premium-beers-section">
         <div class="container">
-          <div class="row">
-            <div class="col-12 text-center mb-4">
-              <div class="section-title">
-                <h2>Nossa História</h2>
-                <div class="divider"></div>
-                <p>Tradição cervejeira desde 2010</p>
+          <div class="row mb-3 align-items-end">
+            <div class="col-lg-8 text-white">
+              <h2 class="display-4 fw-bold mb-0">Nossas Criações</h2>
+              <p class="text-muted mt-2">
+                Do clássico ao ousado. Qual o seu estilo?
+              </p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+              <div class="custom-nav-buttons">
+                <button
+                  class="custom-prev"
+                  type="button"
+                  data-bs-target="#choppsCarousel"
+                  data-bs-slide="prev"
+                >
+                  <i class="fas fa-arrow-left"></i>
+                </button>
+                <button
+                  class="custom-next"
+                  type="button"
+                  data-bs-target="#choppsCarousel"
+                  data-bs-slide="next"
+                >
+                  <i class="fas fa-arrow-right"></i>
+                </button>
               </div>
             </div>
           </div>
-          <div class="row align-items-center">
-            <div class="col-lg-6 historia-content">
-              <p class="historia-text animate-fadeInUp">
-                A Cervejaria Fratelli nasceu da paixão de dois irmãos pela arte
-                cervejeira. Fundada em 2010, nossa cervejaria artesanal combina
-                tradição e inovação para criar sabores únicos que encantam
-                paladares exigentes.
-              </p>
-              <p class="historia-text animate-fadeInUp">
-                Utilizamos apenas ingredientes selecionados e processos
-                artesanais cuidadosos, garantindo que cada chopp produzido seja
-                uma experiência sensorial completa. Nossa filosofia é simples:
-                respeito pela tradição cervejeira, compromisso com a qualidade e
-                paixão pela inovação.
-              </p>
-              <p class="historia-text animate-fadeInUp">
-                Ao longo dos anos, a Cervejaria Fratelli se tornou referência em
-                cervejas artesanais, conquistando prêmios e o reconhecimento dos
-                amantes de cerveja. Nosso espaço foi cuidadosamente projetado
-                para proporcionar uma experiência completa, onde você pode
-                degustar nossas criações enquanto conhece todo o processo de
-                fabricação.
-              </p>
+
+          <div
+            id="choppsCarousel"
+            class="carousel slide"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="beer-showcase">
+                  <div class="beer-info animate-fadeInUp">
+                    <span class="beer-tag">A Queridinha</span>
+                    <h3 class="beer-name">Pilsen Premium</h3>
+                    <p class="beer-desc">
+                      Leve, dourada e refrescante. O equilíbrio perfeito entre
+                      malte e lúpulo para o clima tropical. A porta de entrada
+                      para o mundo artesanal.
+                    </p>
+                    <div class="beer-stats">
+                      <div class="stat"><span>4.8%</span>ABV</div>
+                      <div class="stat"><span>12</span>IBU</div>
+                      <div class="stat"><span>2-4°C</span>Temp</div>
+                    </div>
+                  </div>
+                  <div class="beer-image-container">
+                    <img
+                      src="images/chopes/chopepilsen-cervejariafratelli-min.jpg"
+                      alt="Pilsen"
+                      class="beer-img"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="beer-showcase">
+                  <div class="beer-info">
+                    <span class="beer-tag">Equilíbrio Escuro</span>
+                    <h3 class="beer-name">Black IPA</h3>
+                    <p class="beer-desc">
+                      O melhor dos dois mundos. O frescor do lúpulo de uma IPA
+                      com as notas torradas de café e chocolate dos maltes
+                      escuros.
+                    </p>
+                    <div class="beer-stats">
+                      <div class="stat"><span>6.8%</span>ABV</div>
+                      <div class="stat"><span>60</span>IBU</div>
+                      <div class="stat"><span>8-10°C</span>Temp</div>
+                    </div>
+                  </div>
+                  <div class="beer-image-container">
+                    <img
+                      src="images/chopes/chopeblackipa-cervejariafratelli-min.JPG"
+                      alt="Black IPA"
+                      class="beer-img"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <div class="beer-showcase">
+                  <div class="beer-info">
+                    <span class="beer-tag">Leveza e Sabor</span>
+                    <h3 class="beer-name">Session IPA</h3>
+                    <p class="beer-desc">
+                      Todo o aroma do lúpulo em uma versão com menos álcool e
+                      corpo mais leve. Ideal para beber em quantidade sem perder
+                      a qualidade.
+                    </p>
+                    <div class="beer-stats">
+                      <div class="stat"><span>4.5%</span>ABV</div>
+                      <div class="stat"><span>40</span>IBU</div>
+                      <div class="stat"><span>4-6°C</span>Temp</div>
+                    </div>
+                  </div>
+                  <div class="beer-image-container">
+                    <img
+                      src="images/chopes/chopesession-cervejariafratelli-min.JPG"
+                      alt="Session IPA"
+                      class="beer-img"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="col-lg-6">
-              <div class="historia-img-container">
+          </div>
+        </div>
+      </section>
+
+      <section id="eventos-local" class="experience-section">
+        <div class="container">
+          <div class="row align-items-center mb-5 pb-5 border-bottom-soft">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+              <div class="experience-img-wrapper animate-fadeInUp">
                 <img
-                  src="images/imagensbg/fratelli4.JPG"
-                  alt="Nossa História"
-                  class="historia-img"
-                  loading="lazy"
+                  src="images/confrafratelli.jpg"
+                  alt="Nosso Pub"
+                  class="img-fluid rounded-custom shadow-lg"
+                />
+                <div class="floating-badge">
+                  <i class="fas fa-map-marker-alt"></i> Vitória - ES
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 ps-lg-5 animate-fadeInUp">
+              <span class="sub-heading">Nosso Espaço</span>
+              <h2 class="display-5 mb-3">O Quintal da Fratelli</h2>
+              <p class="lead text-muted">
+                Mais que uma cervejaria, um ponto de encontro.
+              </p>
+              <p>
+                Nosso pub foi desenhado para você se sentir em casa. Com uma
+                área aberta aconchegante, música ao vivo e gastronomia que
+                harmoniza com nossos taps. O lugar perfeito para happy hours,
+                aniversários e casamentos intimistas.
+              </p>
+              <a href="pages/galeria.html" class="btn btn-outline-primary mt-3"
+                >Ver Fotos do Local</a
+              >
+            </div>
+          </div>
+
+          <div id="eventos-externos" class="row align-items-center mt-5 pt-3">
+            <div class="col-lg-6 order-2 order-lg-1 pe-lg-5 animate-fadeInUp">
+              <span class="sub-heading">Levamos a Festa</span>
+              <h2 class="display-5 mb-3">Chopp Onde Você Estiver</h2>
+              <p class="lead text-muted">
+                Seu evento merece chopp artesanal fresco.
+              </p>
+              <p>
+                Casamentos, festas corporativas ou churrasco com os amigos.
+                Levamos a estrutura completa de chopeiras e barris para garantir
+                que seus convidados bebam com a mesma qualidade do nosso balcão.
+              </p>
+              <ul class="feature-list">
+                <li><i class="fas fa-check"></i> Instalação completa</li>
+                <li><i class="fas fa-check"></i> Diversos estilos de chopp</li>
+                <li><i class="fas fa-check"></i> Barris de 30L e 50L</li>
+              </ul>
+              <a href="https://wa.me/5527992741836" class="btn btn-primary mt-3"
+                ><i class="fab fa-whatsapp"></i> Orçar Chopeira</a
+              >
+            </div>
+            <div class="col-lg-6 order-1 order-lg-2 mb-4 mb-lg-0">
+              <div class="experience-img-wrapper animate-fadeInUp">
+                <img
+                  src="images/chopeira-cervejaria-fratelli.png"
+                  alt="Chopeira em Evento"
+                  class="img-fluid rounded-custom shadow-lg"
                 />
               </div>
             </div>
@@ -158,544 +353,179 @@
         </div>
       </section>
 
-      <section id="eventos-local" class="eventos-section">
-        <div class="container">
-          <div class="row">
-            <div class="col-12 text-center mb-5">
-              <div class="section-title">
-                <h2>Eventos no Local</h2>
-                <div class="divider"></div>
-                <p>Espaço perfeito para seus momentos especiais</p>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-4 mb-4">
-              <div class="evento-card">
-                <div class="evento-img">
-                  <img
-                    src="images/corporativo-fratelli.png"
-                    alt="Eventos Corporativos"
-                    loading="lazy"
-                  />
-                  <div class="evento-overlay">
-                    <div class="evento-icon">
-                      <i class="fas fa-briefcase"></i>
-                    </div>
-                  </div>
-                </div>
-                <div class="evento-body">
-                  <h3 class="evento-title">Eventos Corporativos</h3>
-                  <p class="evento-text">
-                    Ambiente ideal para confraternizações, reuniões de equipe e
-                    eventos corporativos. Oferecemos pacotes personalizados que
-                    incluem degustação de chopps e gastronomia exclusiva.
-                  </p>
-                  <a href="pages/galeria.html#corporativos" class="evento-link"
-                    >Ver mais <i class="fas fa-arrow-right"></i
-                  ></a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 mb-4">
-              <div class="evento-card">
-                <div class="evento-img">
-                  <img
-                    src="images/casamento/casamento-cervejariafratelli-min.jpg"
-                    alt="Casamentos"
-                    loading="lazy"
-                  />
-                  <div class="evento-overlay">
-                    <div class="evento-icon">
-                      <i class="fas fa-glass-cheers"></i>
-                    </div>
-                  </div>
-                </div>
-                <div class="evento-body">
-                  <h3 class="evento-title">Casamentos</h3>
-                  <p class="evento-text">
-                    Celebre seu dia especial em um ambiente aconchegante e
-                    único. Nossa equipe está pronta para tornar seu casamento
-                    inesquecível, com um cardápio exclusivo e nossas cervejas
-                    premiadas.
-                  </p>
-                  <a href="pages/galeria.html#casamentos" class="evento-link"
-                    >Ver mais <i class="fas fa-arrow-right"></i
-                  ></a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 mb-4">
-              <div class="evento-card">
-                <div class="evento-img">
-                  <img
-                    src="images/placeholder-formatura.jpg"
-                    alt="Formaturas"
-                    loading="lazy"
-                  />
-                  <div class="evento-overlay">
-                    <div class="evento-icon">
-                      <i class="fas fa-graduation-cap"></i>
-                    </div>
-                  </div>
-                </div>
-                <div class="evento-body">
-                  <h3 class="evento-title">Formaturas</h3>
-                  <p class="evento-text">
-                    Comemore sua conquista acadêmica em grande estilo.
-                    Oferecemos um espaço versátil que pode ser adaptado para
-                    acomodar turmas de todos os tamanhos, com pacotes especiais
-                    para formandos.
-                  </p>
-                  <a href="pages/galeria.html#outros" class="evento-link"
-                    >Ver mais <i class="fas fa-arrow-right"></i
-                  ></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="eventos-externos" class="chopeira-section">
-        <div class="container">
-          <div class="row">
-            <div class="col-12 text-center mb-5">
-              <div class="section-title">
-                <h2>Eventos Externos</h2>
-                <div class="divider"></div>
-                <p>Leve a qualidade da Cervejaria Fratelli para o seu evento</p>
-              </div>
-            </div>
-          </div>
-          <div class="row align-items-center">
-            <div class="col-lg-6 mb-5 mb-lg-0">
-              <p class="lead mb-4">
-                Disponibilizamos chopeiras profissionais para todos os tipos de
-                eventos externos. Nossa equipe especializada garante a
-                instalação e manutenção adequadas, para que você e seus
-                convidados desfrutem da mesma qualidade que oferecemos em nossa
-                cervejaria.
+      <section id="contato" class="cta-section">
+        <div class="cta-overlay"></div>
+        <div class="container position-relative z-2">
+          <div class="row justify-content-center text-center">
+            <div class="col-lg-8">
+              <h2 class="text-white display-4 mb-4">Vamos beber uma juntos?</h2>
+              <p class="text-white-50 lead mb-5">
+                Estamos esperando sua visita em nosso espaço! <br />Entre em
+                contato para ter nosso chopp artesanal no seu evento!
               </p>
-              <p class="mb-4">
-                Ideal para aniversários, festas corporativas, casamentos ao ar
-                livre e muito mais. Temos opções de barris em diversos tamanhos
-                para atender eventos de qualquer porte.
-              </p>
-              <a href="#contato" class="btn btn-primary mt-3"
-                >Solicitar Orçamento</a
-              >
-            </div>
-            <div class="col-lg-6">
-              <div class="chopeira-gallery">
-                <div class="row">
-                  <div class="col-6 mb-4">
-                    <div class="chopeira-item">
-                      <img
-                        src="images/placeholder-externo1.jpg"
-                        alt="Chopeira em Festa"
-                        class="chopeira-img"
-                        loading="lazy"
-                      />
-                      <div class="chopeira-overlay">
-                        <h4 class="chopeira-title">Chopeira em Festa</h4>
-                        <p class="chopeira-subtitle">
-                          Aniversários e comemorações
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-6 mb-4">
-                    <div class="chopeira-item">
-                      <img
-                        src="images/placeholder-externo2.jpg"
-                        alt="Chopeira em Casamento"
-                        class="chopeira-img"
-                        loading="lazy"
-                      />
-                      <div class="chopeira-overlay">
-                        <h4 class="chopeira-title">Chopeira em Casamento</h4>
-                        <p class="chopeira-subtitle">Celebrações ao ar livre</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-6 mb-4">
-                    <div class="chopeira-item">
-                      <img
-                        src="images/placeholder-externo3.jpg"
-                        alt="Chopeira Corporativa"
-                        class="chopeira-img"
-                        loading="lazy"
-                      />
-                      <div class="chopeira-overlay">
-                        <h4 class="chopeira-title">Chopeira Corporativa</h4>
-                        <p class="chopeira-subtitle">Eventos empresariais</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-6 mb-4">
-                    <div class="chopeira-item">
-                      <img
-                        src="images/placeholder-externo1.jpg"
-                        alt="Chopeira em Aniversário"
-                        class="chopeira-img"
-                        loading="lazy"
-                      />
-                      <div class="chopeira-overlay">
-                        <h4 class="chopeira-title">Chopeira em Aniversário</h4>
-                        <p class="chopeira-subtitle">Festas temáticas</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <section id="nossos-chopps" class="chopps-section">
-        <div class="container">
-          <div class="row">
-            <div class="col-12 text-center mb-5">
-              <div class="section-title">
-                <h2>Nossos Chopps</h2>
-                <div class="divider"></div>
-                <p>Conheça nossas criações artesanais</p>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12">
-              <div
-                id="choppsCarousel"
-                class="carousel slide chopp-carousel"
-                data-bs-ride="carousel"
-              >
-                <div class="carousel-indicators">
-                  <button
-                    type="button"
-                    data-bs-target="#choppsCarousel"
-                    data-bs-slide-to="0"
-                    class="active"
-                    aria-current="true"
-                    aria-label="Slide 1"
-                  ></button>
-                  <button
-                    type="button"
-                    data-bs-target="#choppsCarousel"
-                    data-bs-slide-to="1"
-                    aria-label="Slide 2"
-                  ></button>
-                  <button
-                    type="button"
-                    data-bs-target="#choppsCarousel"
-                    data-bs-slide-to="2"
-                    aria-label="Slide 3"
-                  ></button>
-                  <button
-                    type="button"
-                    data-bs-target="#choppsCarousel"
-                    data-bs-slide-to="3"
-                    aria-label="Slide 4"
-                  ></button>
-                  <button
-                    type="button"
-                    data-bs-target="#choppsCarousel"
-                    data-bs-slide-to="4"
-                    aria-label="Slide 5"
-                  ></button>
-                </div>
-
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <div class="chopp-card">
-                      <div class="chopp-img-wrapper">
-                        <img
-                          src="images/chopes/chopepilsen-cervejariafratelli-min.JPG"
-                          alt="Pilsen"
-                          loading="lazy"
-                        />
-                      </div>
-                      <div class="chopp-body">
-                        <h3 class="chopp-title">Pilsen</h3>
-                        <p class="chopp-text">
-                          Nossa Pilsen é leve e refrescante, com notas sutis de
-                          malte e um amargor equilibrado. Perfeita para os dias
-                          quentes.
-                        </p>
-                        <div class="chopp-details">
-                          <span class="chopp-detail"
-                            ><i class="fas fa-percentage"></i> 4.8% ABV</span
-                          >
-                          <span class="chopp-detail"
-                            ><i class="fas fa-temperature-low"></i> 2-4°C</span
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="carousel-item">
-                    <div class="chopp-card">
-                      <div class="chopp-img-wrapper">
-                        <img
-                          src="images/chopes/chopeblackipa-cervejariafratelli-min.JPG"
-                          alt="Black IPA"
-                        />
-                      </div>
-                      <div class="chopp-body">
-                        <h3 class="chopp-title">Black IPA</h3>
-                        <p class="chopp-text">
-                          Combina o amargor e aroma de uma IPA com notas
-                          torradas e de café provenientes dos maltes escuros.
-                        </p>
-                        <div class="chopp-details">
-                          <span class="chopp-detail"
-                            ><i class="fas fa-percentage"></i> 6.8% ABV</span
-                          >
-                          <span class="chopp-detail"
-                            ><i class="fas fa-temperature-low"></i> 8-10°C</span
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="carousel-item">
-                    <div class="chopp-card">
-                      <div class="chopp-img-wrapper">
-                        <img
-                          src="images/chopes/chopesession-cervejariafratelli-min.JPG"
-                          alt="Session IPA"
-                        />
-                      </div>
-                      <div class="chopp-body">
-                        <h3 class="chopp-title">Session IPA</h3>
-                        <p class="chopp-text">
-                          Oferece o caráter aromático e o amargor de uma IPA
-                          tradicional, mas com teor alcoólico reduzido, ideal
-                          para longas sessões.
-                        </p>
-                        <div class="chopp-details">
-                          <span class="chopp-detail"
-                            ><i class="fas fa-percentage"></i> 4.5% ABV</span
-                          >
-                          <span class="chopp-detail"
-                            ><i class="fas fa-temperature-low"></i> 5-7°C</span
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="carousel-item">
-                    <div class="chopp-card">
-                      <div class="chopp-img-wrapper">
-                        <img
-                          src="images/chopes/americanipa-cervejariafratelli-min.JPG"
-                          alt="American IPA"
-                        />
-                      </div>
-                      <div class="chopp-body">
-                        <h3 class="chopp-title">American IPA</h3>
-                        <p class="chopp-text">
-                          Nossa American IPA é intensamente aromática, com notas
-                          de frutas tropicais e cítricas. O amargor é
-                          pronunciado e o corpo é médio.
-                        </p>
-                        <div class="chopp-details">
-                          <span class="chopp-detail"
-                            ><i class="fas fa-percentage"></i> 6.5% ABV</span
-                          >
-                          <span class="chopp-detail"
-                            ><i class="fas fa-temperature-low"></i> 6-8°C</span
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="carousel-item">
-                    <div class="chopp-card">
-                      <div class="chopp-img-wrapper">
-                        <img
-                          src="images/chopes/chopeipa-cervejariafratelli-min.JPG"
-                          alt="IPA"
-                        />
-                      </div>
-                      <div class="chopp-body">
-                        <h3 class="chopp-title">IPA</h3>
-                        <p class="chopp-text">
-                          Nossa IPA tradicional apresenta um perfil aromático
-                          intenso, com notas cítricas e florais, e um amargor
-                          pronunciado e equilibrado.
-                        </p>
-                        <div class="chopp-details">
-                          <span class="chopp-detail"
-                            ><i class="fas fa-percentage"></i> 6.2% ABV</span
-                          >
-                          <span class="chopp-detail"
-                            ><i class="fas fa-temperature-low"></i> 6-8°C</span
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <button
-                  class="carousel-control-prev"
-                  type="button"
-                  data-bs-target="#choppsCarousel"
-                  data-bs-slide="prev"
-                >
-                  <span
-                    class="carousel-control-prev-icon"
-                    aria-hidden="true"
-                  ></span>
-                  <span class="visually-hidden">Anterior</span>
-                </button>
-                <button
-                  class="carousel-control-next"
-                  type="button"
-                  data-bs-target="#choppsCarousel"
-                  data-bs-slide="next"
-                >
-                  <span
-                    class="carousel-control-next-icon"
-                    aria-hidden="true"
-                  ></span>
-                  <span class="visually-hidden">Próximo</span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="contato" class="contato-section">
-        <div class="container">
-          <div class="row">
-            <div class="col-12 text-center mb-5">
-              <div class="section-title">
-                <h2>Contato</h2>
-                <div class="divider"></div>
-                <p>Entre em contato conosco para mais informações</p>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-4 mb-4">
-              <div class="contato-info">
-                <div class="contato-icon">
-                  <i class="fas fa-map-marker-alt"></i>
-                </div>
-                <h4>Endereço</h4>
-                <p class="contato-text">
-                  Av. Saturnino Rangel Mauro, 1011 - <br />Pontal de Camburi<br />Vitória
-                  - ES
-                </p>
-              </div>
-            </div>
-            <div class="col-md-4 mb-4">
-              <div class="contato-info">
-                <div class="contato-icon">
-                  <i class="fas fa-phone"></i>
-                </div>
-                <h4>Telefone</h4>
-                <p class="contato-text">(27) 99274-1836</p>
-              </div>
-            </div>
-            <div class="col-md-4 mb-4">
-              <div class="contato-info">
-                <div class="contato-icon">
-                  <i class="fas fa-envelope"></i>
-                </div>
-                <h4>E-mail</h4>
-                <p class="contato-text">
-                  cervejaria@fratelli<br />reggiani.com.br
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12">
-              <div class="contato-buttons">
-                <a
-                  href="https://wa.me/5511999988888"
-                  class="whatsapp-btn eventos"
-                >
-                  <i class="fab fa-whatsapp"></i> Eventos no Local
+              <div class="cta-grid">
+                <a href="https://wa.me/5527992741836" class="cta-card">
+                  <i class="fab fa-whatsapp"></i>
+                  <span>Falar no WhatsApp</span>
                 </a>
                 <a
-                  href="https://wa.me/5511999977777"
-                  class="whatsapp-btn chopeiras"
+                  href="https://www.instagram.com/fratellicervejaria_/"
+                  class="cta-card instagram"
                 >
-                  <i class="fab fa-whatsapp"></i> Chopeiras para Eventos
+                  <i class="fab fa-instagram"></i>
+                  <span>Seguir no Insta</span>
                 </a>
+                <a
+                  href="https://maps.google.com"
+                  target="_blank"
+                  class="cta-card location"
+                >
+                  <i class="fas fa-map-marked-alt"></i>
+                  <span>Como Chegar</span>
+                </a>
+              </div>
+
+              <div class="mt-5 text-white-50">
+                <p>
+                  <i class="fas fa-clock me-2"></i> Terça a Sexta: 17h às 00h |
+                  Sábado: 16h às 00h
+                </p>
+                <p>
+                  <i class="fas fa-map-pin me-2"></i> Av. Saturnino Rangel
+                  Mauro, 1011 - Vitória, ES
+                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
     </main>
+
     <footer class="footer">
       <div class="container">
-        <div class="row">
-          <div class="col-lg-4 mb-5 mb-lg-0">
-            <img
-              src="images/logo.jpg"
-              alt="Cervejaria Fratelli"
-              class="footer-logo"
-            />
+        <div class="row gy-5">
+          <div class="col-lg-4 text-center text-lg-start">
+            <a href="#home" class="d-inline-block mb-4">
+              <img
+                src="images/logo.jpg"
+                alt="Cervejaria Fratelli"
+                class="footer-logo"
+              />
+            </a>
             <p class="footer-text">
               Tradição e qualidade em cada gole. A Cervejaria Fratelli oferece
-              uma experiência única em cervejas artesanais desde 2010.
+              uma experiência única em cervejas artesanais desde 2019.
             </p>
-            <div class="social-links">
+            <div
+              class="social-links justify-content-center justify-content-lg-start"
+            >
               <a
                 href="https://www.facebook.com/Fratellireggiani/?locale=pt_BR"
                 target="_blank"
                 class="social-link"
-                aria-label="Visite nosso Facebook"
-                ><i class="fab fa-facebook-f"></i
-              ></a>
+                aria-label="Facebook"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
               <a
                 href="https://www.instagram.com/fratellicervejaria_/"
+                target="_blank"
                 class="social-link"
-                aria-label="Visite nosso Instagram"
-                ><i class="fab fa-instagram"></i
-              ></a>
+                aria-label="Instagram"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="https://wa.me/5527992741836"
+                target="_blank"
+                class="social-link"
+                aria-label="WhatsApp"
+              >
+                <i class="fab fa-whatsapp"></i>
+              </a>
             </div>
           </div>
-          <div class="col-lg-4 mb-5 mb-lg-0">
-            <h5 class="footer-title">Links Rápidos</h5>
-            <ul class="footer-links">
-              <li><a href="#home">Home</a></li>
-              <li><a href="#historia">Nossa História</a></li>
-              <li><a href="#eventos-local">Eventos no Local</a></li>
-              <li><a href="#eventos-externos">Eventos Externos</a></li>
-              <li><a href="#nossos-chopps">Nossos Chopps</a></li>
-              <li><a href="pages/galeria.html">Galeria</a></li>
-            </ul>
+
+          <div class="col-lg-4 ps-lg-5">
+            <div class="footer-widget">
+              <h5 class="footer-title">Navegação</h5>
+              <ul class="footer-links">
+                <li>
+                  <a href="#home"
+                    ><i class="fas fa-chevron-right me-2"></i>Home</a
+                  >
+                </li>
+                <li>
+                  <a href="#historia"
+                    ><i class="fas fa-chevron-right me-2"></i>A Alquimia</a
+                  >
+                </li>
+                <li>
+                  <a href="#nossos-chopps"
+                    ><i class="fas fa-chevron-right me-2"></i>Nossos Chopps</a
+                  >
+                </li>
+                <li>
+                  <a href="#eventos-local"
+                    ><i class="fas fa-chevron-right me-2"></i>Espaço &
+                    Eventos</a
+                  >
+                </li>
+                <li>
+                  <a href="pages/galeria.html"
+                    ><i class="fas fa-chevron-right me-2"></i>Galeria de
+                    Fotos</a
+                  >
+                </li>
+              </ul>
+            </div>
           </div>
+
           <div class="col-lg-4">
-            <h5 class="footer-title">Horário de Funcionamento</h5>
-            <ul class="footer-links">
-              <li>Segunda: Fechado</li>
-              <li>Terça a Sexta: 17h às 00h</li>
-              <li>Sábado: 16h às 00h</li>
-              <li>Domingo: Fechado</li>
-            </ul>
+            <div class="footer-widget">
+              <h5 class="footer-title">Funcionamento</h5>
+              <ul class="footer-hours">
+                <li>
+                  <span class="day">Segunda</span>
+                  <span class="time closed">Fechado</span>
+                </li>
+                <li>
+                  <span class="day">Terça a Sexta</span>
+                  <span class="time">17h às 00h</span>
+                </li>
+                <li>
+                  <span class="day">Sábado</span>
+                  <span class="time">16h às 00h</span>
+                </li>
+                <li>
+                  <span class="day">Domingo</span>
+                  <span class="time closed">Fechado</span>
+                </li>
+              </ul>
+
+              <div class="footer-address mt-4">
+                <p>
+                  <i class="fas fa-map-marker-alt text-secondary me-2"></i> Av.
+                  Saturnino Rangel Mauro, 1011<br />Vitória - ES
+                </p>
+              </div>
+            </div>
           </div>
         </div>
+
         <div class="footer-bottom">
-          <p class="copyright">
-            © 2025 Cervejaria Fratelli. Todos os direitos reservados.
-          </p>
+          <div class="row align-items-center">
+            <div class="col-md-12 text-center">
+              <p class="copyright mb-0">
+                © 2025 Cervejaria Fratelli. Todos os direitos reservados.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
+
     <a
       href="#home"
       id="backToTopBtn"
@@ -704,6 +534,7 @@
     >
       <i class="fas fa-arrow-up"></i>
     </a>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
     <script src="js/age-verification.js"></script>

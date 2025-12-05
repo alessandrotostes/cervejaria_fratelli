@@ -1,12 +1,15 @@
-// Script para funcionalidades gerais do site
 document.addEventListener("DOMContentLoaded", function () {
-  // Animação da navbar ao rolar
+  // =========================================================
+  // 1. NAVBAR & SCROLL SPY (Navegação Inteligente)
+  // =========================================================
   const navbar = document.querySelector(".navbar");
   const navLinks = document.querySelectorAll(".nav-link");
   const sections = document.querySelectorAll("section");
+  const navbarToggler = document.querySelector(".navbar-toggler");
+  const navbarCollapse = document.querySelector(".navbar-collapse");
 
-  // Função para animar a navbar ao rolar
-  function animateNavbar() {
+  // Adiciona fundo escuro na navbar ao rolar
+  function handleNavbarScroll() {
     if (window.scrollY > 50) {
       navbar.classList.add("navbar-scrolled");
     } else {
@@ -14,14 +17,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Inicializar a animação da navbar
-  animateNavbar();
-  window.addEventListener("scroll", animateNavbar);
-
-  // Destacar item do menu ativo ao rolar
-  function highlightNavItem() {
+  // Destaca o link ativo no menu baseado na seção visível
+  function highlightActiveLink() {
     let currentSection = "";
-    let scrollPosition = window.scrollY + 100;
+    const scrollPosition = window.scrollY + 150; // Offset para compensar a navbar
 
     sections.forEach((section) => {
       const sectionTop = section.offsetTop;
@@ -42,24 +41,78 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
-  const backToTopBtn = document.getElementById("backToTopBtn");
 
-  if (backToTopBtn) {
-    // <-- Adiciona esta verificação
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 300) {
-        backToTopBtn.classList.add("show");
-      } else {
-        backToTopBtn.classList.remove("show");
+  window.addEventListener("scroll", () => {
+    handleNavbarScroll();
+    highlightActiveLink();
+  });
+
+  // =========================================================
+  // 2. NAVEGAÇÃO SUAVE (Smooth Scroll)
+  // =========================================================
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute("href");
+      if (targetId === "#") return;
+
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        // Fecha o menu mobile se estiver aberto
+        if (navbarCollapse.classList.contains("show")) {
+          navbarToggler.click();
+        }
+
+        // Calcula a posição considerando a altura da navbar fixa
+        const navbarHeight = 80;
+        const targetPosition =
+          targetElement.getBoundingClientRect().top +
+          window.pageYOffset -
+          navbarHeight +
+          10; // Pequeno ajuste visual
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: "smooth",
+        });
       }
     });
-  }
+  });
 
-  // Lógica da Barra de Progresso de Leitura
+  // =========================================================
+  // 3. ANIMAÇÕES AO ROLAR (ATUALIZADO PARA O NOVO LAYOUT)
+  // =========================================================
+  // Aqui listamos todas as classes do novo layout que devem animar ao aparecer
+  const elementsToAnimate = document.querySelectorAll(
+    ".hero-title, .hero-subtitle, .hero-btn, .section-title, .essence-card, .beer-info, .experience-img-wrapper, .sub-heading, .cta-card, .animate-fadeInUp"
+  );
+
+  // Garante que todos tenham a classe base de opacidade 0
+  elementsToAnimate.forEach((el) => el.classList.add("animate-fadeInUp"));
+
+  const observerOptions = {
+    threshold: 0.1, // Dispara quando 10% do elemento estiver visível
+    rootMargin: "0px 0px -50px 0px", // Dispara um pouco antes de entrar totalmente
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("animated");
+        observer.unobserve(entry.target); // Para de observar após animar (melhora performance)
+      }
+    });
+  }, observerOptions);
+
+  elementsToAnimate.forEach((el) => {
+    observer.observe(el);
+  });
+
+  // =========================================================
+  // 4. BARRA DE PROGRESSO DE LEITURA
+  // =========================================================
   const progressBar = document.querySelector(".progress-bar");
-
   if (progressBar) {
-    // <-- Adiciona esta verificação
     window.addEventListener("scroll", () => {
       const scrollTop = document.documentElement.scrollTop;
       const scrollHeight =
@@ -69,122 +122,49 @@ document.addEventListener("DOMContentLoaded", function () {
       progressBar.style.width = scrollPercentage + "%";
     });
   }
-  // Inicializar o destaque do menu
-  highlightNavItem();
-  window.addEventListener("scroll", highlightNavItem);
 
-  // Navegação suave ao clicar nos links do menu
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-      e.preventDefault();
-
-      const targetId = this.getAttribute("href");
-      if (targetId === "#") return;
-
-      const targetElement = document.querySelector(targetId);
-      if (targetElement) {
-        const navbarHeight = navbar.offsetHeight;
-        const targetPosition =
-          targetElement.getBoundingClientRect().top +
-          window.pageYOffset -
-          navbarHeight;
-
-        window.scrollTo({
-          top: targetPosition,
-          behavior: "smooth",
-        });
-
-        // Fechar menu mobile após clicar
-        const navbarToggler = document.querySelector(".navbar-toggler");
-        const navbarCollapse = document.querySelector(".navbar-collapse");
-        if (navbarCollapse.classList.contains("show")) {
-          navbarToggler.click();
-        }
-      }
-    });
-  });
-
-  // Animações de entrada para elementos
-  const animateElements = document.querySelectorAll(
-    ".animate-fadeInUp, .historia-text, .evento-card, .chopp-card, .contato-info"
-  );
-
-  function checkAnimations() {
-    animateElements.forEach((element) => {
-      const elementPosition = element.getBoundingClientRect().top;
-      const windowHeight = window.innerHeight;
-
-      if (elementPosition < windowHeight * 0.85) {
-        element.classList.add("animated");
+  // =========================================================
+  // 5. BOTÃO VOLTAR AO TOPO
+  // =========================================================
+  const backToTopBtn = document.getElementById("backToTopBtn");
+  if (backToTopBtn) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 400) {
+        backToTopBtn.classList.add("show");
+      } else {
+        backToTopBtn.classList.remove("show");
       }
     });
   }
 
-  // Inicializar animações
-  checkAnimations();
-  window.addEventListener("scroll", checkAnimations);
-
-  // Inicializar carrossel de chopps com configurações personalizadas
+  // =========================================================
+  // 6. CARROSSEL DE CHOPPS (Bootstrap Config)
+  // =========================================================
   const choppsCarousel = document.getElementById("choppsCarousel");
   if (choppsCarousel) {
+    // Inicializa via Bootstrap API para garantir controle
     const carousel = new bootstrap.Carousel(choppsCarousel, {
       interval: 5000,
       wrap: true,
-      touch: true,
+      touch: true, // Garante swipe em mobile
+      pause: "hover",
     });
 
-    // Adicionar controles de teclado para o carrossel
+    // Navegação via teclado
     document.addEventListener("keydown", function (e) {
-      if (e.key === "ArrowLeft") {
-        carousel.prev();
-      } else if (e.key === "ArrowRight") {
-        carousel.next();
-      }
+      if (e.key === "ArrowLeft") carousel.prev();
+      if (e.key === "ArrowRight") carousel.next();
     });
   }
 
-  // Efeito de hover para cards de eventos
-  const eventoCards = document.querySelectorAll(".evento-card");
-  eventoCards.forEach((card) => {
-    card.addEventListener("mouseenter", function () {
-      this.classList.add("evento-card-hover");
-    });
-
-    card.addEventListener("mouseleave", function () {
-      this.classList.remove("evento-card-hover");
-    });
-  });
-
-  // Efeito de hover para itens de chopeira
-  const chopeiraItems = document.querySelectorAll(".chopeira-item");
-  chopeiraItems.forEach((item) => {
-    item.addEventListener("mouseenter", function () {
-      this.classList.add("chopeira-item-hover");
-    });
-
-    item.addEventListener("mouseleave", function () {
-      this.classList.remove("chopeira-item-hover");
-    });
-  });
-
-  // Animação para botões de contato
-  const whatsappBtns = document.querySelectorAll(".whatsapp-btn");
-  whatsappBtns.forEach((btn) => {
-    btn.addEventListener("mouseenter", function () {
-      this.classList.add("pulse");
-    });
-
-    btn.addEventListener("mouseleave", function () {
-      this.classList.remove("pulse");
-    });
-  });
-
-  // Detectar dispositivo móvel para ajustes específicos
-  const isMobile =
-    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-      navigator.userAgent
-    );
-  if (isMobile) {
-    document.body.classList.add("mobile-device");
+  // =========================================================
+  // 7. ANO AUTOMÁTICO NO RODAPÉ
+  // =========================================================
+  const yearSpan = document.querySelector(".copyright");
+  if (yearSpan) {
+    const currentYear = new Date().getFullYear();
+    if (yearSpan.innerHTML.includes("2025")) {
+      yearSpan.innerHTML = yearSpan.innerHTML.replace("2025", currentYear);
+    }
   }
 });
